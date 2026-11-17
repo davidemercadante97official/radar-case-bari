@@ -97,6 +97,22 @@ class TestRadar(unittest.TestCase):
         self.assertIsNone(bari["scarta"])
         self.assertFalse(stanic.get("indipendente"))   # "Villaggio" non è una villa
 
+    def test_stanze_e_studenti(self):
+        base = {"fonte": "T", "url": "https://agenzia.it/affitto/1", "img": None, "scheda_letta": True}
+        stanza = prepara({**base, "key": "s:1", "testo": "Casa in affitto, Via Giuseppe Capruzzi, Carrassi, Bari | € 400 | "
+                          "150 m² | STANZA SINGOLA IN APPARTAMENTO CONDIVISO. Contratto transitorio per studenti"})
+        casa = prepara({**base, "key": "s:2", "testo": "Trilocale in affitto, Carrassi, Bari | € 800 | 80 m² | "
+                        "camera da letto matrimoniale, cameretta, vicino al campus universitario"})
+        breve = prepara({**base, "key": "s:3", "testo": "Trivani in affitto, Torre a Mare, Bari | € 650 | 90 m² | "
+                         "disponibile fino al 31/07/2027, arredato"})
+        portale = prepara({**base, "scheda_letta": False, "key": "s:4",
+                           "testo": "Quadrilocale in affitto, Poggiofranco, Bari | € 450 | 150 m²"})
+        self.assertEqual(stanza["scarta"], "stanza o casa per studenti")
+        self.assertIsNone(casa["scarta"])
+        self.assertIsNone(breve["scarta"])
+        self.assertTrue(any("transitorio" in n for n in breve["note"]))
+        self.assertIn("stanza", portale["scarta"])          # 3 €/m² senza scheda leggibile: è una stanza
+
     def test_siti_schede(self):
         import re
         from bs4 import BeautifulSoup

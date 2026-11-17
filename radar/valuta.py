@@ -13,7 +13,8 @@ URL_NON_CASA = __import__("re").compile(
 def valuta(a: dict) -> dict:
     """a = annuncio con 'testo' + campi di annunci.leggi(). Aggiunge zona, livello, motivi.
     'scarta' = motivo per cui l'annuncio non interessa (None se interessa)."""
-    z = trova(a.get("testo", ""))
+    # la zona si cerca prima nel riquadro dell'elenco (preciso), poi nella scheda completa
+    z = trova(a.get("testo_zona") or a.get("testo", ""))
     a["zona"] = z.nome if z else None
     a["gruppo"] = z.gruppo if z else None
     p, mq, aff = a.get("prezzo"), a.get("mq"), a.get("affitto")
@@ -28,6 +29,8 @@ def valuta(a: dict) -> dict:
         return {**a, "scarta": "comune vicino: solo ville/villette o nuova costruzione"}
     if a.get("non_casa") or URL_NON_CASA.search(a.get("url", "").lower()):
         return {**a, "scarta": "non è un'abitazione intera (box, negozio, stanza, quota...)"}
+    if aff and a.get("studenti"):
+        return {**a, "scarta": "stanza o casa per studenti"}
     if a.get("asta") and a.get("non_visitabile"):
         return {**a, "scarta": "asta non visitabile"}
     if not p:
@@ -72,6 +75,11 @@ def valuta(a: dict) -> dict:
     else:
         liv = "caro"
     sospetto = config.SOSPETTO_AFFITTO if aff else config.SOSPETTO_VENDITA
+    if aff and r < config.STANZA_AFFITTO and not a.get("scheda_letta"):
+        # scheda non leggibile (portali): un affitto così basso è quasi sempre una stanza
+        return {**a, "scarta": "affitto troppo basso: quasi certamente una stanza"}
+    if aff and a.get("transitorio"):
+        note.append("⚠️ Contratto transitorio o a tempo: controlla la durata")
     if r < sospetto and not a.get("asta"):
         note.append("⚠️ Prezzo troppo basso per la zona: controlla che non sia una stanza, "
                     "una nuda proprietà, una quota o un errore")

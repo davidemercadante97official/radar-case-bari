@@ -16,7 +16,9 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 
-from .annunci import PREZZO
+from .annunci import PREZZO, prezzo as _prezzo
+from .config import SOGLIA_AFFITTO
+from .zone import trova
 
 try:
     from bs4 import BeautifulSoup
@@ -25,7 +27,7 @@ except ImportError:          # senza bs4 i siti vengono saltati (le email funzio
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/130.0 Safari/537.36")
-MAX_DETTAGLI = 15
+MAX_DETTAGLI = 30
 SERVIZIO = re.compile(r"^(previous slide|next slide|condividi|novit|evidenza|in evidenza|scegli|video|"
                       r"\d+ / \d+|vendita|affitto|locazione|in locazione|dettagli)$", re.I)
 TIPI = re.compile(r"appartament|villa|villett|attico|locali|vani|casa|bilocale|trilocale|quadrilocale|"
@@ -202,17 +204,30 @@ def leggi_siti(conosciuti: set[str], stato_siti: dict) -> list[dict]:
         dettagli = 0
         for url, c in trovati.items():
             key = _chiave(nome, url)
-            if (sito.get("dettaglio") or not PREZZO.search(c["testo"])) and key not in conosciuti:
+            riquadro = c["testo"]
+            z = trova(riquadro)
+            p = _prezzo(riquadro)
+            # si apre la scheda quando l'elenco non basta: manca il prezzo, è un affitto
+            # (stanze e case per studenti si capiscono solo dalla descrizione) o manca il quartiere
+            apri = (sito.get("dettaglio") or not p or p < SOGLIA_AFFITTO
+                    or z is None or z.regola == "generica")
+            scheda = ""
+            if apri and key not in conosciuti:
                 if dettagli >= MAX_DETTAGLI:
                     continue                      # lo leggo al prossimo giro
                 try:
-                    c["testo"] = _dettaglio(ses, url)
+                    scheda = _dettaglio(ses, url)
                     dettagli += 1
                 except Exception as e:
                     errori.append(f"{url}: {type(e).__name__}")
                     continue
-            cards.append({"key": key, "fonte": nome, "url": url, "testo": c["testo"],
-                          "titolo": _titolo(c["testo"]), "img": c.get("img")})
+            testo = (riquadro + " | " + scheda) if scheda else riquadro
+            specifica = z is not None and z.regola != "generica"
+            cards.append({"key": key, "fonte": nome, "url": url, "testo": testo,
+                          "testo_zona": riquadro if specifica else testo,
+                          "scheda_letta": bool(scheda),
+                          "titolo": _titolo(riquadro if PREZZO.search(riquadro) else testo),
+                          "img": c.get("img")})
         stato_siti[nome] = {"annunci": len(trovati), "errori": errori[:3],
                             "ok": bool(trovati) and not errori}
         print(f"   {nome}: {len(trovati)} annunci" + (f", {len(errori)} errori" if errori else ""))

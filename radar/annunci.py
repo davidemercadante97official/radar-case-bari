@@ -33,6 +33,17 @@ INDIPENDENTE = re.compile(r"\b(villa|villetta|villino|villette|casa indipendente
                           r"terratetto|terra-tetto|casa singola|casa unifamiliare|bifamiliare|a schiera)\b", re.I)
 NUOVA = re.compile(r"nuova costruzione|in costruzione|nuovo\s*/\s*in costruzione|di nuova realizzazione|"
                    r"nuovo cantiere|appena costruit|consegna (?:prevista|202\d)", re.I)
+# Stanze, posti letto e case per studenti: "STANZA SINGOLA IN APPARTAMENTO CONDIVISO",
+# "rivolto a lavoratori o studenti", "posto letto in doppia", "solo studentesse"...
+# ("camera da letto" non conta: è una normale stanza della casa)
+STUDENTI = re.compile(
+    r"\bstanz[ae]\s+(?:singol|doppi|matrimonial|in affitto|in appartamento|in condivisione|arredat|libera)|"
+    r"\bcamer[ae]\s+(?:singol|doppi)[ae]?\b(?!\s+da letto)|"
+    r"\bposti? letto\b|appartamento condiviso|\bin condivisione\b|\bcondivis[oa] con\b|"
+    r"\bcoinquilin|\baffittasi\s+stanz|\bstudent[ie]|\bstudentess|\buniversitar[io]|\bfuori\s?sede\b|"
+    r"\buso foresteria\b|\bdomicilio universitario", re.I)   # "vicino al campus" non conta
+TRANSITORIO = re.compile(r"\btransitori[oa]\b|\bnatura transitoria|\bfino al? \d{1,2}/\d{2,4}\b|"
+                         r"\bmax(?:imo)? \d{1,2} mesi\b|\b(?:6|12|18) mesi\b|\bstagional|\bbreve periodo\b", re.I)
 AFFITTO_PAROLE = re.compile(r"\baffitt|\blocazione|/mese|al mese|mensil", re.I)
 
 
@@ -93,6 +104,8 @@ def leggi(testo: str) -> dict:
     righe = titolo.split(" | ")
     d["non_casa"] = bool(NON_CASA.search(righe[0])) or any(
         NON_CASA.search(x) and len(x) > 15 for x in righe[1:]) or bool(re.search(r"nuda propriet|quota di|% di propriet|posto letto", low))
+    d["studenti"] = bool(STUDENTI.search(t))
+    d["transitorio"] = bool(TRANSITORIO.search(t))
     d["indipendente"] = bool(INDIPENDENTE.search(t))
     d["nuova"] = bool(NUOVA.search(t))
     p = d["prezzo"]

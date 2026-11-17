@@ -13,7 +13,9 @@ SUPER = 0.75                   # 🚨 almeno il 25% sotto la media
 BUONO = 0.88                   # 💡 almeno il 12% sotto la media
 CARO = 1.10                    # 🔺 oltre il 10% sopra la media
 SOSPETTO_AFFITTO = 0.45        # affitto sotto il 45% della media: stanze, studenti o errore
-SOSPETTO_VENDITA = 0.35        # vendita sotto il 35%: nuda proprietà, quota, rudere o errore
+SOSPETTO_VENDITA = 0.35
+# affitto sotto il 35% della media e scheda non leggibile: si scarta (è una stanza)
+STANZA_AFFITTO = 0.35        # vendita sotto il 35%: nuda proprietà, quota, rudere o errore
 
 # Una casa da ristrutturare si confronta aggiungendo il costo stimato dei lavori.
 LAVORI_MQ = 500                # € al m² (ristrutturazione media completa a Bari)
