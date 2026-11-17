@@ -26,6 +26,15 @@ from .valuta import LIVELLI, da_notificare, valuta
 STATO = config.ROOT / "data" / "stato.json"
 
 
+def adesso():
+    """Ora italiana anche sui server di GitHub (che sono in UTC)."""
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("Europe/Rome"))
+    except Exception:
+        return datetime.now(timezone.utc).astimezone()
+
+
 def carica_env():
     f = config.ROOT / ".env"
     if f.exists():
@@ -73,7 +82,7 @@ def prepara(card: dict) -> dict:
 
 def giro(dry=False, file=None):
     s = carica()
-    ora = datetime.now(timezone.utc).astimezone().strftime("%d/%m %H:%M")
+    ora = adesso().strftime("%d/%m %H:%M")
     if telegram.attivo() and not dry:
         try:
             telegram.gestisci_aggiornamenti(s)
