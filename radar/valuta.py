@@ -20,6 +20,9 @@ def valuta(a: dict) -> dict:
         return {**a, "scarta": f"zona esclusa ({z.nome})"}
     if z.regola == "solo_con_box" and not a.get("box"):
         return {**a, "scarta": f"{z.nome}: interessa solo con box o posto auto"}
+    if (config.COMUNI_SOLO_VILLE_E_NUOVE and z.gruppo != "Bari"
+            and not (a.get("indipendente") or a.get("nuova"))):
+        return {**a, "scarta": "comune vicino: solo ville/villette o nuova costruzione"}
     if a.get("non_casa"):
         return {**a, "scarta": "non è un'abitazione intera (box, negozio, stanza, quota...)"}
     if a.get("asta") and a.get("non_visitabile"):
@@ -36,6 +39,11 @@ def valuta(a: dict) -> dict:
     a["scarta"] = None
     a["media_mq"] = z.media(aff)
     note = []
+    if z.gruppo != "Bari" and a.get("indipendente"):
+        note.append("🏡 Villa / casa indipendente")
+    if a.get("nuova") and not aff:
+        a["media_mq"] = round(a["media_mq"] * config.NUOVO_COEFF)
+        note.append("🏗 Nuova costruzione: confrontata con la media della zona +25% (il nuovo costa di più)")
     if not mq:
         a.update(livello="media", eur_mq=None, rapporto=None)
         note.append("Metri quadri non indicati: valuta tu il prezzo")
@@ -75,5 +83,8 @@ def da_notificare(a: dict) -> bool:
     if a.get("scarta"):
         return False
     if a["livello"] in config.NOTIFICA:
+        return True
+    # ville e nuove costruzioni nei comuni: arrivano se il prezzo non è caro
+    if config.COMUNI_SOLO_VILLE_E_NUOVE and a.get("gruppo") != "Bari" and a["livello"] == "media":
         return True
     return config.NOTIFICA_MEDIA_CON_BOX and a["livello"] == "media" and bool(a.get("box"))

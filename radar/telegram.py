@@ -69,7 +69,7 @@ def scheda(a: dict) -> str:
         f"piano {a['piano']}" if a.get("piano") else "piano n.d."]))
     righe.append(f"🚗 Posto auto/box: {si_no(a.get('box'))} · balcone: {si_no(a.get('balcone'))}")
     for n in a.get("note", []):
-        righe.append(e(n) if not n.startswith(("⚠️", "⚖️", "🔑", "🚗")) else n)
+        righe.append(e(n) if not n.startswith(("⚠️", "⚖️", "🔑", "🚗", "🏡", "🏗")) else n)
     righe.append(f'🔗 <a href="{html.escape(a["url"], quote=True)}">Apri su {e(a["fonte"])}</a>')
     return "\n".join(righe)
 

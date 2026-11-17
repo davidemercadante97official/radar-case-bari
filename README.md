@@ -21,6 +21,10 @@ su questi portali. Anche le aste ci finiscono (Aste Florio, Centro Aste, Aste Ag
   - **Escluse sempre**: San Paolo, CEP, San Pio/Enziteto.
   - **Solo con box o posto auto**: Murat e Umbertino.
   - "Umbertina - Madonnella" (la zona di Immobiliare.it) conta come Madonnella: controlla la via.
+- **Comuni vicini** (dal 17/11/2026): arrivano solo **ville, villette, case indipendenti** e case di
+  **nuova costruzione**; gli appartamenti normali fuori Bari vengono scartati. Per le nuove costruzioni
+  la media della zona sale del 25% (il nuovo costa di più). Si annulla in `radar/config.py`:
+  `COMUNI_SOLO_VILLE_E_NUOVE = False`.
 - **Budget**: vendita fino a 200.000 € (per le aste vale il prezzo base), affitto fino a 1.000 €/mese.
   Si cambia in `radar/config.py` (`MAX_VENDITA`, `MAX_AFFITTO`).
 - **Affare** = prezzo al m² rispetto alla media della zona:

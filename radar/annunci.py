@@ -27,6 +27,10 @@ NON_VISITABILE = re.compile(r"non visitabile|visita non (?:consentita|possibile)
 NON_CASA = re.compile(r"^\W*(box|garage|posto auto|magazzino|negozio|locale commerciale|ufficio|capannone|"
                       r"terreno|cantina|laboratorio|deposito|stanza|camera singola|camera doppia|"
                       r"posto letto)\b", re.I)
+INDIPENDENTE = re.compile(r"\b(villa|villetta|villino|villette|casa indipendente|soluzione indipendente|"
+                          r"terratetto|terra-tetto|casa singola|casa unifamiliare|bifamiliare|a schiera)\b", re.I)
+NUOVA = re.compile(r"nuova costruzione|in costruzione|nuovo\s*/\s*in costruzione|di nuova realizzazione|"
+                   r"nuovo cantiere|appena costruit|consegna (?:prevista|202\d)", re.I)
 AFFITTO_PAROLE = re.compile(r"\baffitt|\blocazione|/mese|al mese|mensil", re.I)
 
 
@@ -79,6 +83,8 @@ def leggi(testo: str) -> dict:
     # la tipologia sta nel titolo (prima riga): "Box auto in vendita..." non "...con box auto"
     titolo = (testo or "").split(" | ")[0]
     d["non_casa"] = bool(NON_CASA.search(titolo)) or bool(re.search(r"nuda propriet|quota di|% di propriet|posto letto", low))
+    d["indipendente"] = bool(INDIPENDENTE.search(t))
+    d["nuova"] = bool(NUOVA.search(t))
     p = d["prezzo"]
     d["affitto"] = bool(p and p < config.SOGLIA_AFFITTO) or (bool(AFFITTO_PAROLE.search(t)) and bool(p and p < 10_000))
     return d

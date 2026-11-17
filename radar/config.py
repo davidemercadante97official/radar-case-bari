@@ -21,6 +21,13 @@ LAVORI_MQ = 500                # € al m² (ristrutturazione media completa a B
 # Mq minimi per considerare un annuncio una casa (sotto: box, cantine, monolocali minuscoli)
 MQ_MIN = 35
 
+# --- Comuni vicini (modifica del 17/11/2026) ----------------------------------
+# Fuori Bari arrivano solo ville/villette/case indipendenti e case di nuova costruzione.
+# Per tornare a prima (tutte le case dei comuni) metti False.
+COMUNI_SOLO_VILLE_E_NUOVE = True
+# Il nuovo costa di più dell'usato: la media della zona si alza del 25% per confrontarlo
+NUOVO_COEFF = 1.25
+
 # --- Notifiche -----------------------------------------------------------------
 # Livelli che arrivano su Telegram: "super", "buono", "media", "caro"
 NOTIFICA = {"super", "buono"}

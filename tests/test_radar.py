@@ -82,5 +82,21 @@ class TestRadar(unittest.TestCase):
         self.assertEqual(b["scarta"], "asta non visitabile")
 
 
+    def test_comuni_solo_ville_e_nuove(self):
+        base = {"fonte": "T", "url": "u", "img": None}
+        app = prepara({**base, "key": "x:10", "testo": "Appartamento in vendita in Via Roma | Triggiano (BA) | € 90.000 | 100 mq"})
+        villa = prepara({**base, "key": "x:11", "testo": "Villa in vendita in Via Roma | Capurso (BA) | € 190.000 | 160 mq"})
+        nuova = prepara({**base, "key": "x:12", "testo": "Trilocale nuova costruzione | Modugno (BA) | € 170.000 | 90 mq"})
+        bari = prepara({**base, "key": "x:13", "testo": "Trilocale via Roma, Japigia, Bari | € 150.000 | 100 mq"})
+        stanic = prepara({**base, "key": "x:14", "testo": "Trilocale Villaggio del Lavoratore, Stanic, Bari | € 120.000 | 90 mq"})
+        self.assertIn("solo ville", app["scarta"])
+        self.assertIsNone(villa["scarta"])
+        self.assertTrue(da_notificare(villa))           # 1.188 €/m² contro 1.430: -17%
+        self.assertIsNone(nuova["scarta"])
+        self.assertEqual(nuova["media_mq"], round(1783 * 1.25))
+        self.assertIsNone(bari["scarta"])
+        self.assertFalse(stanic.get("indipendente"))   # "Villaggio" non è una villa
+
+
 if __name__ == "__main__":
     unittest.main()
