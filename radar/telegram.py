@@ -1,9 +1,11 @@
 """Bot Telegram per il gruppo: schede degli annunci, bottoni condivisi, comandi."""
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import os
+import re
 import time
 
 import requests
@@ -80,13 +82,33 @@ def bottoni(aid: str) -> str:
     return json.dumps({"inline_keyboard": [row1, row2]})
 
 
-def voti_testo(voti: dict) -> str:
-    if not voti:
+def voti_testo(nomi: dict) -> str:
+    """nomi = {nome: azione}. I nomi stanno solo nei messaggi Telegram, mai nella memoria
+    del radar (che è in un repository pubblico)."""
+    if not nomi:
         return ""
     per = {}
-    for nome, az in voti.items():
+    for nome, az in nomi.items():
         per.setdefault(az, []).append(nome)
     return "\n\n" + " · ".join(f"{AZIONI[k]}: {', '.join(v)}" for k, v in per.items())
+
+
+def nomi_dal_messaggio(testo_msg: str) -> dict:
+    """Chi ha premuto cosa, riletto dall'ultima riga del messaggio ("❤️ Mi piace: Davide · ...")."""
+    nomi = {}
+    for k, etichetta in AZIONI.items():
+        m = re.search(re.escape(etichetta) + r": ([^·\n]+)", testo_msg or "")
+        if m:
+            for n in m.group(1).split(","):
+                if n.strip():
+                    nomi[n.strip()] = k
+    return nomi
+
+
+def anonimo(user_id) -> str:
+    """Codice della persona salvato nella memoria: non si risale al nome né all'id Telegram."""
+    sale = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    return "u" + hashlib.sha256(f"{sale}|{user_id}".encode()).hexdigest()[:8]
 
 
 def invia(a: dict) -> int | None:
@@ -123,21 +145,26 @@ def gestisci_aggiornamenti(stato: dict):
 
 def _bottone(stato, cq):
     az, _, aid = (cq.get("data") or "").partition("|")
-    nome = cq.get("from", {}).get("first_name") or "?"
+    chi = cq.get("from", {})
+    nome = (chi.get("first_name") or "?").replace(",", " ").replace("·", " ").strip()
     a = stato["annunci"].get(aid)
     api("answerCallbackQuery", callback_query_id=cq["id"],
         text=("Segnato: " + AZIONI.get(az, az)) if a else "Annuncio non più in memoria")
     if not a or az not in AZIONI:
         return
-    voti = a.setdefault("voti", {})
-    if voti.get(nome) == az:
-        voti.pop(nome)            # secondo tocco sullo stesso bottone = annulla
-    else:
-        voti[nome] = az
+    voti = a.setdefault("voti", {})           # memoria: {codice anonimo: azione}
+    codice = anonimo(chi.get("id"))
     msg = cq.get("message") or {}
+    nomi = nomi_dal_messaggio(msg.get("caption") or msg.get("text") or "")
+    if voti.get(codice) == az:
+        voti.pop(codice)          # secondo tocco sullo stesso bottone = annulla
+        nomi.pop(nome, None)
+    else:
+        voti[codice] = az
+        nomi[nome] = az
     if not msg:
         return
-    corpo = scheda(a) + voti_testo(voti)
+    corpo = scheda(a) + voti_testo(nomi)
     if "caption" in msg:
         api("editMessageCaption", message_id=msg["message_id"], caption=corpo[:1024], parse_mode="HTML",
             reply_markup=bottoni(aid))
@@ -150,7 +177,7 @@ def _riga(a) -> str:
     p = eur(a["prezzo"]) + ("/mese" if a["affitto"] else "")
     mq = f" · {a['mq']} m²" if a.get("mq") else ""
     v = a.get("voti", {})
-    chi = (" · " + ", ".join(f"{AZIONI[x].split()[0]} {n}" for n, x in v.items())) if v else ""
+    chi = (" · " + " ".join(AZIONI[x].split()[0] for x in v.values() if x in AZIONI)) if v else ""
     return f'• <a href="{html.escape(a["url"], quote=True)}">{e(a["zona"])}</a> {p}{mq}{chi}'
 
 

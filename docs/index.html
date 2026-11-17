@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Case Bari</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<style>
+:root{
+  --bg:#f5f4f2; --surface:#ffffff; --surface-2:#eeece8; --ink:#1c1a19; --ink-2:#56514c;
+  --ink-3:#8a847d; --line:#e2ded8; --head:#8c1d24; --head-ink:#ffffff; --accent:#f2c14e;
+  --ok:#1f7a4d; --err:#b3261e;
+  --super:#b3132a; --super-bg:#fde4e8; --good:#17643f; --good-bg:#dff3e8;
+  --media:#4a5568; --media-bg:#e8ebf0; --warn:#8a4b00; --warn-bg:#fff0d9;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141312; --surface:#1d1b1a; --surface-2:#282624; --ink:#f1eeea; --ink-2:#c4bdb5;
+  --ink-3:#8f8880; --line:#34302d; --head:#5c1418;
+  --super:#ff8796; --super-bg:#3d1a21; --good:#7fe0ad; --good-bg:#173527;
+  --media:#b8c2d3; --media-bg:#262b35; --warn:#ffbe6b; --warn-bg:#3a2a12; --shadow:none;
+}}
+:root[data-theme="dark"]{
+  --bg:#141312; --surface:#1d1b1a; --surface-2:#282624; --ink:#f1eeea; --ink-2:#c4bdb5;
+  --ink-3:#8f8880; --line:#34302d; --head:#5c1418;
+  --super:#ff8796; --super-bg:#3d1a21; --good:#7fe0ad; --good-bg:#173527;
+  --media:#b8c2d3; --media-bg:#262b35; --warn:#ffbe6b; --warn-bg:#3a2a12; --shadow:none;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+header{background:var(--head);color:var(--head-ink);border-bottom:4px solid var(--accent)}
+header .wrap{display:flex;align-items:center;gap:12px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto}
+.brand .logo{font-size:30px;line-height:1}
+.brand h1{font-size:20px;margin:0}
+.brand small{display:block;opacity:.85;font-size:12.5px}
+.stat{background:rgba(255,255,255,.14);border-radius:10px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.stat b{font-size:16px;margin-right:4px;font-variant-numeric:tabular-nums}
+.themebtn{background:rgba(255,255,255,.14);border:0;color:inherit;border-radius:10px;padding:6px 10px;cursor:pointer;font:inherit}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font:inherit;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tab .n{font-weight:400;opacity:.7;margin-left:4px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.bar input[type=search],.bar select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0;max-width:100%}
+.bar input[type=search]{flex:1 1 220px}
+label.chk{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--ink-2);cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card.super{border-color:var(--super)}
+.thumb{aspect-ratio:4/3;background:var(--surface-2);position:relative;overflow:hidden;display:block}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-size:46px;opacity:.3}
+.badges{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:4px;flex-wrap:wrap;z-index:2}
+.b{font-size:11px;font-weight:700;letter-spacing:.3px;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff}
+.b.super{background:var(--super)} .b.buono{background:var(--good)} .b.media{background:#4a5568}
+.b.caro{background:#6b6b6b} .b.new{background:var(--accent);color:#1a1a1a}
+.body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.title{font-size:14px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;text-decoration:none}
+.title:hover{text-decoration:underline}
+.zona{font-size:13px;color:var(--ink-2)}
+.zona b{color:var(--ink)}
+.price{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.price small{font-size:13px;font-weight:500;color:var(--ink-2)}
+.price s{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:6px}
+.small{font-size:12px;color:var(--ink-3);line-height:1.35}
+.diff{font-weight:700}
+.diff.giu{color:var(--good)} .diff.su{color:var(--super)}
+.card.super .diff.giu{color:var(--super)}
+.meter{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden;position:relative}
+.meter i{display:block;height:100%;background:var(--good)}
+.meter u{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink-3)}
+.card.super .meter i{background:var(--super)}
+.feat{display:flex;flex-wrap:wrap;gap:4px}
+.f{font-size:12px;background:var(--surface-2);color:var(--ink-2);border-radius:6px;padding:2px 7px}
+.f.si{background:var(--good-bg);color:var(--good);font-weight:600}
+.warn{font-size:12px;color:var(--warn);background:var(--warn-bg);border-radius:6px;padding:4px 7px}
+.foot{margin-top:auto;display:flex;justify-content:space-between;gap:8px;align-items:flex-end;font-size:12px;color:var(--ink-3)}
+.voti{font-size:15px;letter-spacing:2px}
+.empty{padding:60px 16px;text-align:center;color:var(--ink-3)}
+.more{display:block;margin:20px auto;font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:10px 20px;cursor:pointer}
+.zones{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.zr{display:grid;grid-template-columns:minmax(120px,1.4fr) repeat(3,minmax(70px,1fr));gap:8px;padding:8px 12px;border-top:1px solid var(--line);font-size:13.5px;align-items:center}
+.zr:first-child{border-top:0}
+.zr.h{font-size:12px;color:var(--ink-3);font-weight:600;background:var(--surface-2)}
+.zr span{font-variant-numeric:tabular-nums}
+.zr button{font:inherit;font-size:12px;border:0;background:var(--good-bg);color:var(--good);font-weight:700;border-radius:999px;padding:2px 8px;cursor:pointer;justify-self:start}
+details.box{margin:26px 0 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+details.box summary{cursor:pointer;font-weight:600}
+.hl{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px 18px;margin-top:10px;font-size:13px}
+.hl div{display:flex;gap:8px;align-items:baseline;min-width:0}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;transform:translateY(1px)}
+.hl .note{color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.legend{font-size:13px;color:var(--ink-2);margin-top:8px}
+.legend p{margin:6px 0}
+@media (max-width:640px){
+  .grid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .stat{font-size:12px;padding:5px 9px}
+  .zr{grid-template-columns:1fr auto auto;font-size:12.5px}
+  .zr .hide-m{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="logo">🏠</span><div><h1>Radar Case Bari</h1><small id="updated">caricamento…</small></div></div>
+    <span class="stat"><b id="s-tot">–</b>annunci validi</span>
+    <span class="stat"><b id="s-super">–</b>super affari</span>
+    <span class="stat"><b id="s-pref">–</b>preferiti</span>
+    <button class="themebtn" id="theme" title="Tema chiaro/scuro" aria-label="Cambia tema">◐</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tabs" role="tablist" id="tabs">
+    <button class="tab" role="tab" data-tab="vendita" aria-selected="true">🏷 Vendita<span class="n" id="n-vendita"></span></button>
+    <button class="tab" role="tab" data-tab="affitto" aria-selected="false">🔑 Affitto<span class="n" id="n-affitto"></span></button>
+    <button class="tab" role="tab" data-tab="asta" aria-selected="false">⚖️ Aste<span class="n" id="n-asta"></span></button>
+    <button class="tab" role="tab" data-tab="pref" aria-selected="false">❤️ Preferiti<span class="n" id="n-pref"></span></button>
+    <button class="tab" role="tab" data-tab="zone" aria-selected="false">📍 Zone</button>
+  </div>
+
+  <section id="list-view">
+    <div class="bar">
+      <input type="search" id="q" placeholder="Cerca: via, quartiere, agenzia…" aria-label="Cerca">
+      <select id="zona" aria-label="Zona"><option value="">Tutte le zone</option></select>
+      <select id="level" aria-label="Convenienza">
+        <option value="">Tutti i prezzi</option>
+        <option value="affari">🚨💡 Solo affari</option>
+        <option value="super">🚨 Super affari</option>
+        <option value="buono">💡 Buoni affari</option>
+        <option value="media">🏠 Nella media</option>
+        <option value="caro">🔺 Cari</option>
+      </select>
+      <select id="fonte" aria-label="Sito"><option value="">Tutti i siti</option></select>
+      <select id="sort" aria-label="Ordina">
+        <option value="new">Più recenti</option>
+        <option value="deal">Più convenienti (vs media zona)</option>
+        <option value="pasc">Prezzo crescente</option>
+        <option value="mq">Prezzo al m² crescente</option>
+        <option value="big">Più grandi</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="soloBari"> Solo Bari città</label>
+      <label class="chk"><input type="checkbox" id="box"> Con box / posto auto</label>
+      <label class="chk"><input type="checkbox" id="noscartati" checked> Nascondi ❌ scartati</label>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>Nessun annuncio con questi filtri.</div>
+    <button class="more" id="more" hidden>Mostra altri</button>
+  </section>
+
+  <section id="zone-view" hidden>
+    <div class="zones" id="zones"></div>
+    <p class="small">Prezzi medi richiesti (Immobiliare.it, ottobre 2026). "Annunci" conta quelli validi negli ultimi 30 giorni; tocca il numero per vederli.</p>
+  </section>
+
+  <details class="box" id="health">
+    <summary>Stato delle fonti</summary>
+    <div class="hl" id="hl"></div>
+  </details>
+  <details class="box">
+    <summary>Come legge gli annunci</summary>
+    <div class="legend">
+      <p><b>Convenienza</b>: prezzo al m² rispetto alla media del quartiere. 🚨 super affare = almeno 25% sotto, 💡 buon affare = almeno 12% sotto, 🏠 nella media, 🔺 caro = oltre 10% sopra.</p>
+      <p>Case da ristrutturare: al prezzo si aggiungono 500 €/m² di lavori. Nuove costruzioni: la media della zona sale del 25%.</p>
+      <p>Esclusi sempre: San Paolo, CEP, San Pio/Enziteto, stanze e case per studenti. Murat e Umbertino solo con box. Fuori Bari solo ville, case indipendenti e nuove costruzioni.</p>
+      <p>I bottoni ❤️ 📞 🗓 ❌ sono quelli premuti nel gruppo Telegram (senza nomi).</p>
+    </div>
+  </details>
+</main>
+
+<script>
+const PAGE=48;
+const LV={super:"SUPER AFFARE",buono:"BUON AFFARE",media:"NELLA MEDIA",caro:"CARO"};
+const RANK={super:0,buono:1,media:2,caro:3};
+const VOTO={like:"❤️",call:"📞",visit:"🗓",no:"❌"};
+let ALL=[],STATUS={};
+const S={tab:"vendita",q:"",zona:"",level:"",fonte:"",sort:"new",soloBari:false,box:false,noscartati:true,shown:PAGE};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>String(s||"").normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const eur=(v,d=0)=>v==null?"–":new Intl.NumberFormat("it-IT",{minimumFractionDigits:d,maximumFractionDigits:d}).format(v)+" €";
+function ago(ts){if(!ts)return"";const s=Date.now()/1000-ts;if(s<90)return"ora";if(s<3600)return Math.round(s/60)+" min fa";if(s<86400)return Math.round(s/3600)+" h fa";const d=Math.round(s/86400);return d===1?"ieri":d+" giorni fa"}
+const isNew=x=>x.primo_ts&&Date.now()/1000-x.primo_ts<86400;
+const tipo=x=>x.asta?"asta":(x.affitto?"affitto":"vendita");
+const pref=x=>(x.voti||[]).some(v=>v==="like"||v==="call"||v==="visit");
+const scartato=x=>(x.voti||[]).includes("no");
+
+try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}
+$("#theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}};
+
+function filtered(){
+  const q=norm(S.q).split(/\s+/).filter(Boolean);
+  let xs=ALL.filter(x=>{
+    if(S.tab==="pref"){if(!pref(x))return false}
+    else if(tipo(x)!==S.tab)return false;
+    if(S.zona&&x.zona!==S.zona)return false;
+    if(S.level==="affari"&&!(x.livello==="super"||x.livello==="buono"))return false;
+    if(S.level&&S.level!=="affari"&&x.livello!==S.level)return false;
+    if(S.fonte&&x.fonte!==S.fonte)return false;
+    if(S.soloBari&&x.gruppo!=="Bari")return false;
+    if(S.box&&!x.box)return false;
+    if(S.noscartati&&S.tab!=="pref"&&scartato(x))return false;
+    if(q.length){const h=norm([x.titolo,x.zona,x.fonte].join(" "));if(!q.every(w=>h.includes(w)))return false}
+    return true});
+  const r=x=>x.rapporto??9;
+  if(S.sort==="deal")xs.sort((a,b)=>r(a)-r(b));
+  else if(S.sort==="pasc")xs.sort((a,b)=>(a.prezzo??1e12)-(b.prezzo??1e12));
+  else if(S.sort==="mq")xs.sort((a,b)=>(a.eur_mq??1e9)-(b.eur_mq??1e9));
+  else if(S.sort==="big")xs.sort((a,b)=>(b.mq??0)-(a.mq??0));
+  else xs.sort((a,b)=>(b.primo_ts||0)-(a.primo_ts||0));
+  return xs}
+
+function card(x){
+  const aff=!!x.affitto;
+  const img=x.img?`<img loading="lazy" src="${esc(x.img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`:"";
+  const badges=`<span class="b ${x.livello}">${LV[x.livello]||""}</span>${isNew(x)?'<span class="b new">NUOVO</span>':""}`+
+    (x.asta?'<span class="b">⚖️ ASTA</span>':"")+(x.indipendente&&x.gruppo!=="Bari"?'<span class="b">🏡 VILLA</span>':"")+(x.nuova?'<span class="b">🏗 NUOVO</span>':"");
+  let conv="";
+  if(x.eur_mq&&x.media_mq){
+    const p=Math.round((x.rapporto-1)*100), w=Math.max(4,Math.min(100,x.rapporto/1.5*100));
+    conv=`<div class="meter" title="Prezzo al m² rispetto alla media della zona (la tacca è la media)"><i style="width:${w}%"></i><u style="left:${100/1.5}%"></u></div>
+      <div class="small">${eur(x.eur_mq,aff?2:0)}/m² · media zona ${eur(x.media_mq,aff?2:0)}/m² · <span class="diff ${p<0?"giu":"su"}">${p>0?"+":""}${p}%</span></div>`;
+  }else conv=`<div class="small">m² non indicati</div>`;
+  const f=[];
+  f.push(`<span class="f">${x.locali?x.locali+" vani":"vani n.d."}</span>`);
+  if(x.mq)f.push(`<span class="f">${x.mq} m²</span>`);
+  if(x.bagni)f.push(`<span class="f">${x.bagni} bagn${x.bagni==1?"o":"i"}</span>`);
+  f.push(`<span class="f">${x.piano?"piano "+esc(x.piano):"piano n.d."}</span>`);
+  f.push(x.box?`<span class="f si">🚗 box/posto auto</span>`:`<span class="f">🚗 n.d.</span>`);
+  if(x.balcone)f.push(`<span class="f si">balcone</span>`);
+  if(x.terrazzo)f.push(`<span class="f si">terrazzo</span>`);
+  if(x.ascensore)f.push(`<span class="f">ascensore</span>`);
+  const old=x.calo_da&&x.calo_da>x.prezzo?`<s>${eur(x.calo_da)}</s>`:"";
+  const warns=(x.note||[]).filter(n=>!/^🏡|^🏗/.test(n));
+  const voti=(x.voti||[]).map(v=>VOTO[v]||"").join("");
+  const altri=(x.altri_link||[]).length?` · anche su ${x.altri_link.length} altri siti`:"";
+  return `<div class="card ${x.livello}">
+    <a class="thumb" href="${esc(x.url)}" target="_blank" rel="noopener"><span class="ph">🏠</span>${img}<div class="badges">${badges}</div></a>
+    <div class="body">
+      <a class="title" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.titolo||"Annuncio")}</a>
+      <div class="zona">📍 <b>${esc(x.zona||"")}</b>${x.gruppo&&x.gruppo!=="Bari"?" · comune vicino":""}</div>
+      <div class="price">${eur(x.prezzo)}${aff?" <small>al mese</small>":""}${old}</div>
+      ${conv}
+      <div class="feat">${f.join("")}</div>
+      ${warns.map(w=>`<div class="warn">${esc(w)}</div>`).join("")}
+      <div class="foot"><span>${esc(x.fonte)}${altri}<br>${ago(x.primo_ts)}${x.inviato?" · 📨 nel gruppo":""}</span><span class="voti" title="Bottoni premuti nel gruppo">${voti}</span></div>
+    </div></div>`}
+
+function renderList(){
+  const xs=filtered();
+  $("#grid").innerHTML=xs.slice(0,S.shown).map(card).join("");
+  $("#empty").hidden=xs.length>0;
+  $("#more").hidden=xs.length<=S.shown;
+  $("#more").textContent=`Mostra altri (${xs.length-S.shown})`;
+}
+
+function renderZones(){
+  const z={};
+  ALL.forEach(x=>{if(!x.zona||!x.media_mq)return;const k=x.zona;z[k]=z[k]||{n:0,aff:0,vend:null,affm:null,gruppo:x.gruppo};z[k].n++;
+    if(x.affitto)z[k].affm=x.media_mq;else if(!x.nuova)z[k].vend=x.media_mq;if(x.livello==="super"||x.livello==="buono")z[k].aff++});
+  const rows=Object.entries(z).sort((a,b)=>(a[1].gruppo==="Bari"?0:1)-(b[1].gruppo==="Bari"?0:1)||a[0].localeCompare(b[0]));
+  $("#zones").innerHTML=`<div class="zr h"><span>Zona</span><span>Vendita €/m²</span><span class="hide-m">Affitto €/m²</span><span>Annunci</span></div>`+
+    rows.map(([k,v])=>`<div class="zr"><b>${esc(k)}${v.gruppo!=="Bari"?' <span class="small">comune</span>':""}</b><span>${v.vend?eur(v.vend):"–"}</span><span class="hide-m">${v.affm?eur(v.affm,2):"–"}</span><button data-zona="${esc(k)}">${v.n}${v.aff?` · ${v.aff} affari`:""}</button></div>`).join("");
+}
+
+function render(){
+  const zv=S.tab==="zone";
+  $("#list-view").hidden=zv;$("#zone-view").hidden=!zv;
+  if(zv)renderZones();else renderList();
+  for(const t of ["vendita","affitto","asta"])$("#n-"+t).textContent=ALL.filter(x=>tipo(x)===t&&!scartato(x)).length;
+  $("#n-pref").textContent=ALL.filter(pref).length;
+}
+
+function renderStatus(){
+  $("#updated").textContent=STATUS.ultimo_giro_ts?"Ultimo controllo "+ago(STATUS.ultimo_giro_ts)+(STATUS.ultimo_giro_siti?` · siti agenzie: ${STATUS.ultimo_giro_siti}`:""):"in attesa del primo controllo";
+  $("#s-tot").textContent=ALL.length;
+  $("#s-super").textContent=ALL.filter(x=>x.livello==="super").length;
+  $("#s-pref").textContent=ALL.filter(pref).length;
+  const rows=Object.entries(STATUS.fonti||{}).sort((a,b)=>a[0].localeCompare(b[0]));
+  const col=v=>v.ok===true?"var(--ok)":v.ok===false?"var(--err)":"var(--ink-3)";
+  $("#hl").innerHTML=rows.map(([k,v])=>`<div><span class="dot" style="background:${col(v)}"></span><b>${esc(k)}</b><span class="note" title="${esc(v.nota)}">${esc(v.nota||"")}</span></div>`).join("");
+  const bad=rows.filter(([,v])=>v.ok===false).length;
+  $("#health summary").textContent="Stato delle fonti"+(bad?` (${bad} con problemi)`:"");
+}
+
+function fillSelects(){
+  const fill=(sel,key,label)=>{const el=$(sel),cur=el.value,c={};ALL.forEach(x=>{if(x[key])c[x[key]]=(c[x[key]]||0)+1});
+    el.innerHTML=`<option value="">${label}</option>`+Object.keys(c).sort((a,b)=>a.localeCompare(b)).map(s=>`<option value="${esc(s)}">${esc(s)} (${c[s]})</option>`).join("");el.value=cur};
+  fill("#zona","zona","Tutte le zone");fill("#fonte","fonte","Tutti i siti");
+}
+
+async function load(){
+  const get=async(f,def)=>{const c=new AbortController();const t=setTimeout(()=>c.abort(),20000);
+    try{const r=await fetch(f+"?t="+Date.now(),{cache:"no-store",signal:c.signal});return r.ok?await r.json():def}catch(e){return def}finally{clearTimeout(t)}};
+  const a=await get("data/annunci.json",null), s=await get("data/stato.json",{});
+  if(a===null){$("#updated").textContent="Dati non disponibili, riprovo tra poco";return}
+  ALL=(Array.isArray(a)?a:[]).filter(x=>x.livello in RANK);STATUS=s||{};
+  fillSelects();renderStatus();render();
+}
+
+$("#tabs").onclick=e=>{const b=e.target.closest(".tab");if(!b)return;S.tab=b.dataset.tab;S.shown=PAGE;document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t===b));render()};
+$("#zones").onclick=e=>{const b=e.target.closest("button[data-zona]");if(!b)return;S.zona=b.dataset.zona;$("#zona").value=S.zona;S.tab="vendita";document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab==="vendita"));S.shown=PAGE;render();scrollTo({top:0,behavior:"smooth"})};
+const on=(id,ev,fn)=>$(id).addEventListener(ev,e=>{fn(e.target);S.shown=PAGE;render()});
+on("#q","input",t=>S.q=t.value);
+on("#zona","change",t=>S.zona=t.value);
+on("#level","change",t=>S.level=t.value);
+on("#fonte","change",t=>S.fonte=t.value);
+on("#sort","change",t=>S.sort=t.value);
+on("#soloBari","change",t=>S.soloBari=t.checked);
+on("#box","change",t=>S.box=t.checked);
+on("#noscartati","change",t=>S.noscartati=t.checked);
+$("#more").onclick=()=>{S.shown+=PAGE;renderList()};
+load();setInterval(load,5*60*1000);
+</script>
+</body>
+</html>

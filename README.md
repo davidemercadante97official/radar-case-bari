@@ -14,16 +14,23 @@ Le agenzie che vi interessano (Tecnocasa, Tempocasa, Iconacasa, Studio Vitulli,
 Professionecasa, RE/MAX, Masi, Casa di Bari, Rafaschieri, Vistocasa) pubblicano tutte
 su questi portali. Anche le aste ci finiscono (Aste Florio, Centro Aste, Aste Agency...).
 
+## Dashboard
+
+https://davidemercadante97official.github.io/radar-case-bari/ (`docs/index.html`).
+Annunci validi degli ultimi 30 giorni, divisi in vendita, affitto, aste e preferiti, con filtri
+per zona, convenienza, sito e posto auto, più la tabella dei prezzi medi per zona.
+Il repository è pubblico: nella memoria del radar e nella dashboard non ci sono nomi
+(dei bottoni ❤️ 📞 🗓 ❌ si salva solo l'azione), né email, né password.
+
 ## Siti delle agenzie (lettura diretta)
 
-Ogni 4 ore il radar legge anche i siti di: Tecnocasa, RE/MAX, Tempocasa, Toscano, Vistocasa,
+Ogni ora il radar legge anche i siti di: Tecnocasa, RE/MAX, Tempocasa, Toscano, Vistocasa,
 Professionecasa, Studio Vitulli, Gabetti, Rafaschieri, Altomare, Executive, Castelletti,
 Homedreams, Paccione, Zarra (`radar/siti.py`). Questi siti non bloccano i programmi; il radar
 li legge con calma (una pagina alla volta, con pause) e solo le pagine che permettono.
 Iconacasa carica gli annunci solo nel browser: i suoi annunci arrivano dalle email di Immobiliare.
 Masi e Casa di Bari: sito non raggiungibile o vuoto.
-Ogni 4 ore e non ogni 30 minuti perché il repository è privato (2.000 minuti gratis al mese):
-si cambia in `radar/config.py` (`SITI_OGNI_ORE`).
+Ogni quanto: `SITI_OGNI_ORE` in `radar/config.py`.
 Se nell'annuncio manca il quartiere (solo via + "Bari"), il confronto è con la media di Bari
 città e la scheda lo dice: controllate voi la via.
 
@@ -101,7 +108,7 @@ Si può anche provare un'email salvata: `python -m radar.main --dry-run --file a
 Crea un repository su GitHub e carica questa cartella (senza il file `.env`).
 In **Settings → Secrets and variables → Actions** aggiungi: `TELEGRAM_BOT_TOKEN`,
 `TELEGRAM_CHAT_ID`, `EMAIL_ADDRESS`, `EMAIL_APP_PASSWORD`.
-Il radar parte da solo ogni 30 minuti (`.github/workflows/radar.yml`).
+Il radar parte da solo ogni 15 minuti (`.github/workflows/radar.yml`).
 Con un repository **privato** GitHub dà 2.000 minuti al mese: in quel caso metti
 `*/30` al posto di `*/15` nel file del workflow.
 

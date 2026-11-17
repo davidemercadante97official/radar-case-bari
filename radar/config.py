@@ -39,10 +39,10 @@ MAX_MESSAGGI_PER_GIRO = 25
 SILENZIOSI = True              # solo i super affari suonano
 
 # --- Siti delle agenzie ---------------------------------------------------------
-# Lettura diretta dei siti (radar/siti.py). Con il repository privato i minuti gratis di
-# GitHub sono 2.000 al mese: i siti si leggono ogni 4 ore, le email ogni 30 minuti.
+# Lettura diretta dei siti (radar/siti.py): ogni ora. Le email ogni 15 minuti.
+# Il repository è pubblico, quindi i minuti di GitHub sono illimitati.
 SITI_ATTIVI = True
-SITI_OGNI_ORE = 4
+SITI_OGNI_ORE = 1
 
 # --- Email ---------------------------------------------------------------------
 # Mittenti degli avvisi delle ricerche salvate

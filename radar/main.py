@@ -166,21 +166,68 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
         telegram.testo(f"…e altri <b>{extra}</b> annunci interessanti: scrivi /migliori.")
 
     for a in nuovi:
-        a.pop("testo_html", None)
+        # il testo completo serve solo durante il giro: la memoria resta leggera
+        for k in ("testo_html", "testo", "testo_zona", "oggetto", "key"):
+            a.pop(k, None)
+        a.setdefault("primo_ts", int(time.time()))
         s["annunci"][a["id"]] = {**s["annunci"].get(a["id"], {}), **a}
     s["email_lette"].extend(letti)
     s["ultimo_giro"] = ora
+    s["ultimo_giro_ts"] = int(time.time())
+    s["fonti"] = {"Email (portali)": {"ok": email_avvisi.configurato() or bool(file),
+                                      "nota": f"{len(letti)} email nuove in questo giro"}}
     scartati = {}
     for a in nuovi:
         if a.get("scarta"):
             scartati[a["scarta"]] = scartati.get(a["scarta"], 0) + 1
     if not dry and not file:
         salva(s)
+        dashboard(s)
     print(f"Giro {ora}: {len(letti)} email nuove, {len(cards)} annunci, {len(nuovi)} nuovi, "
           f"{len(da_mandare)} da segnalare, {inviati} inviati.")
     for k, v in sorted(scartati.items(), key=lambda kv: -kv[1]):
         print(f"   scartati: {v} × {k}")
     return nuovi
+
+
+DASH = config.ROOT / "docs" / "data"
+CAMPI_DASH = ["id", "titolo", "url", "img", "fonte", "zona", "gruppo", "prezzo", "mq", "locali", "bagni",
+              "piano", "box", "balcone", "terrazzo", "ascensore", "affitto", "asta", "occupato", "nuova",
+              "indipendente", "ristrutturare", "transitorio", "eur_mq", "media_mq", "rapporto", "livello",
+              "note", "primo", "primo_ts", "visto", "altri_link", "calo_da"]
+
+
+def dashboard(s):
+    """File letti dalla dashboard (docs/ = GitHub Pages): annunci validi degli ultimi 30 giorni.
+    Niente nomi: dei bottoni si salvano solo le azioni."""
+    limite = time.time() - 30 * 86400
+    out = []
+    for a in s["annunci"].values():
+        if a.get("scarta") or not a.get("livello") or a.get("primo_ts", time.time()) < limite:
+            continue
+        # annunci salvati prima della regola dei comuni (17/11/2026): stessa regola anche qui
+        if (config.COMUNI_SOLO_VILLE_E_NUOVE and a.get("gruppo") != "Bari"
+                and not (a.get("indipendente") or a.get("nuova"))):
+            continue
+        x = {k: a.get(k) for k in CAMPI_DASH if a.get(k) not in (None, [], "")}
+        if "/mailer/" in (x.get("img") or ""):      # immagine generica delle email di Casa.it
+            x.pop("img")
+        x["voti"] = sorted(a.get("voti", {}).values())
+        x["inviato"] = a.get("msg_id") is not None
+        out.append(x)
+    out.sort(key=lambda x: -(x.get("primo_ts") or 0))
+    stato = {"ultimo_giro": s.get("ultimo_giro"), "ultimo_giro_ts": s.get("ultimo_giro_ts"),
+             "ultimo_giro_siti": s.get("ultimo_giro_siti"),
+             "fonti": {**s.get("fonti", {}),
+                       **{k: {"ok": v.get("ok"), "nota": f"{v.get('annunci', 0)} annunci"
+                              + (f" · errore: {v['errori'][0][:90]}" if v.get("errori") else "")}
+                          for k, v in s.get("siti", {}).items()}},
+             "budget": {"vendita": config.MAX_VENDITA, "affitto": config.MAX_AFFITTO}}
+    DASH.mkdir(parents=True, exist_ok=True)
+    for nome, dati in (("annunci.json", out), ("stato.json", stato)):
+        tmp = DASH / (nome + ".tmp")
+        tmp.write_text(json.dumps(dati, ensure_ascii=False, separators=(",", ":")), encoding="utf8")
+        tmp.replace(DASH / nome)
 
 
 def cli():
