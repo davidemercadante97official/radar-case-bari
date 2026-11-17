@@ -40,7 +40,7 @@ STUDENTI = re.compile(
     r"\bstanz[ae]\s+(?:singol|doppi|matrimonial|in affitto|in appartamento|in condivisione|arredat|libera)|"
     r"\bcamer[ae]\s+(?:singol|doppi)[ae]?\b(?!\s+da letto)|"
     r"\bposti? letto\b|appartamento condiviso|\bin condivisione\b|\bcondivis[oa] con\b|"
-    r"\bcoinquilin|\baffittasi\s+stanz|\bstudent[ie]|\bstudentess|\buniversitar[io]|\bfuori\s?sede\b|"
+    r"\bcoinquilin|\baffittasi\s+stanz|\bstudent[ie]|\bstudentess|\bfuori\s?sede\b|"   # "vicino all'università" non conta
     r"\buso foresteria\b|\bdomicilio universitario", re.I)   # "vicino al campus" non conta
 TRANSITORIO = re.compile(r"\btransitori[oa]\b|\bnatura transitoria|\bfino al? \d{1,2}/\d{2,4}\b|"
                          r"\bmax(?:imo)? \d{1,2} mesi\b|\b(?:6|12|18) mesi\b|\bstagional|\bbreve periodo\b", re.I)

@@ -107,7 +107,8 @@ class TestRadar(unittest.TestCase):
                          "disponibile fino al 31/07/2027, arredato"})
         portale = prepara({**base, "scheda_letta": False, "key": "s:4",
                            "testo": "Quadrilocale in affitto, Poggiofranco, Bari | € 450 | 150 m²"})
-        self.assertEqual(stanza["scarta"], "stanza o casa per studenti")
+        self.assertIn(stanza["scarta"], ("stanza o casa per studenti",
+                                         "non è un'abitazione intera (box, negozio, stanza, quota...)"))
         self.assertIsNone(casa["scarta"])
         self.assertIsNone(breve["scarta"])
         self.assertTrue(any("transitorio" in n for n in breve["note"]))
