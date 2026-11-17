@@ -374,6 +374,44 @@
    "impronta": "b454aa9116cc",
    "primo": "17/11 21:08",
    "visto": "17/11 21:08"
+  },
+  "0e258c685067b477": {
+   "prezzo": 95000.0,
+   "mq": 100,
+   "locali": 3,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "affitto": false,
+   "key": "idealista:37515898",
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37515898/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-17T211905&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=eb4d6527-0638-4ca3-ba21-8d6e7e8a961d",
+   "testo": "Vedi 30 foto | Casa indipendente in Via Carlo Alberto s.n.c, Triggiano | 95.000 € | 950 €/m² | 3 locali     100 m² | Novità in vendita! Triggiano, Via Carlo Alberto; In zona centrale, a pochi passi dalle principali attività e dai servizi, proponiamo una caratteristica soluzione indipendente, idea... | Contatta | Vedi tutti gli annunci: Bari vendita fino a 200.000 € | Questo annuncio si avvicina a ciò che stai cercando? | Da Le tue ricerche Puoi controllare i tuoi criteri, scegliere di ricevere il riepilogo quotidiano o continuare a ricevere avvisi immediati. | Se non ti interessano più, puoi Smettere di ricevere il riepilogo quotidiano delle novità e dei suggerimenti. | Con l'app di idealista puoi ricevere immediatamente nuovi annunci o la risposta degli inserzionisti che contatti.",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "oggetto": "Nuova casa indipendente per la tua ricerca: Bari vendita fino a 200.000 €!",
+   "titolo": "Vedi 30 foto, Casa indipendente in Via Carlo Alberto s.n.c, Triggiano",
+   "id": "0e258c685067b477",
+   "zona": "Triggiano",
+   "gruppo": "Comuni vicini",
+   "scarta": null,
+   "media_mq": 1581.0,
+   "eur_mq": 950.0,
+   "rapporto": 0.601,
+   "livello": "super",
+   "note": [],
+   "impronta": "c768715fb87a",
+   "primo": "17/11 20:21",
+   "visto": "17/11 20:21",
+   "msg_id": 20
   }
  },
  "email_lette": [
@@ -382,8 +420,9 @@
   "<010201a1eb17fa6b-c1d1a33d-c2fa-4bdd-8fcf-f5fc08c3aedb-000000@eu-west-1.amazonses.com>",
   "<20261117200252.3819B7C041B@mx4s.idealista.com>",
   "<a9c907e9-fadb-fb60-e407-90d8ed29b37f@casa.it>",
-  "<aa0f34d0-3b81-1a83-ba56-9e0f42e691c5@casa.it>"
+  "<aa0f34d0-3b81-1a83-ba56-9e0f42e691c5@casa.it>",
+  "<20261117201905.2B7F1440F2E@mx1s.idealista.com>"
  ],
  "tg_offset": 928800419,
- "ultimo_giro": "17/11 21:08"
+ "ultimo_giro": "17/11 20:21"
 }
