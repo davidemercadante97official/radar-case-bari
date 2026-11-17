@@ -8442,8 +8442,8 @@
   "<d351b93e-094b-63c0-4423-5bee3df6126d@casa.it>",
   "<20261117211849.D17AD180203@mxs8.idealista.com>"
  ],
- "tg_offset": 928800419,
- "ultimo_giro": "17/11 22:29",
+ "tg_offset": 928800421,
+ "ultimo_giro": "17/11 22:57",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -8523,5 +8523,11 @@
  },
  "ultimo_giro_siti_ts": 1794951294.5452826,
  "ultimo_giro_siti": "17/11 22:29",
- "ultimo_giro_ts": 1794952508
+ "ultimo_giro_ts": 1794952628,
+ "fonti": {
+  "Email (portali)": {
+   "ok": true,
+   "nota": "0 email nuove in questo giro"
+  }
+ }
 }
