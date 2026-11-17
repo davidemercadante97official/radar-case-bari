@@ -97,6 +97,25 @@ class TestRadar(unittest.TestCase):
         self.assertIsNone(bari["scarta"])
         self.assertFalse(stanic.get("indipendente"))   # "Villaggio" non è una villa
 
+    def test_siti_schede(self):
+        import re
+        from bs4 import BeautifulSoup
+        from radar import siti
+        html = """<div class="lista">
+          <div class="card"><a href="/annuncio/111"><img src="/f1.jpg"></a>
+            <h3>Trilocale in vendita</h3><p>Bari, Via Giovanni Modugno - Poggiofranco</p>
+            <p>€ 180.000</p><p>71 Mq · 3 locali</p><a href="/annuncio/111">Dettagli</a></div>
+          <div class="card"><a href="/annuncio/222">Negozio in via dei Mille, Bari</a><p>€ 90.000</p></div>
+        </div>"""
+        s = siti.schede(BeautifulSoup(html, "html.parser"), "https://agenzia.it/", re.compile(r"/annuncio/\d+"))
+        self.assertEqual(len(s), 2)
+        c = s["https://agenzia.it/annuncio/111"]
+        self.assertNotIn("Negozio", c["testo"])            # il riquadro non sconfina nell'annuncio dopo
+        a = prepara({"key": "t:111", "fonte": "T", "url": "https://agenzia.it/annuncio/111",
+                     "testo": c["testo"], "titolo": siti._titolo(c["testo"]), "img": c["img"]})
+        self.assertEqual((a["prezzo"], a["mq"], a["locali"], a["zona"]), (180000, 71, 3, "Poggiofranco"))
+        self.assertTrue(a["img"].endswith("/f1.jpg"))
+
 
 if __name__ == "__main__":
     unittest.main()

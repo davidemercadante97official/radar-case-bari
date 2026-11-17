@@ -75,12 +75,22 @@ def prepara(card: dict) -> dict:
     a = {**leggi(card["testo"]), **card}
     parti = (card.get("testo") or "").split(" | ")
     # Casa.it: "Appartamento in vendita in Via X | Libertà, Bari (BA)": titolo + zona
-    a["titolo"] = (parti[0] + (", " + parti[1] if len(parti) > 1 and not re.search(r"\d|€|asta", parti[1], re.I) else ""))[:160]
+    if card.get("titolo"):
+        a["titolo"] = card["titolo"]
+    else:
+        a["titolo"] = (parti[0] + (", " + parti[1] if len(parti) > 1 and not re.search(r"\d|€|asta", parti[1], re.I) else ""))[:160]
     a["id"] = hashlib.sha1(card["key"].encode()).hexdigest()[:16]
     return valuta(a)
 
 
-def giro(dry=False, file=None):
+def tocca_ai_siti(s, forza=False) -> bool:
+    if forza:
+        return True
+    ultimo = s.get("ultimo_giro_siti_ts", 0)
+    return time.time() - ultimo >= config.SITI_OGNI_ORE * 3600 - 300
+
+
+def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
     s = carica()
     ora = adesso().strftime("%d/%m %H:%M")
     if telegram.attivo() and not dry:
@@ -98,6 +108,18 @@ def giro(dry=False, file=None):
     else:
         print("Email non configurata (EMAIL_ADDRESS / EMAIL_APP_PASSWORD nel file .env).")
         cards, letti = [], []
+
+    # siti delle agenzie: ogni SITI_OGNI_ORE ore (consumano più minuti di GitHub)
+    if not file and not niente_siti and config.SITI_ATTIVI and tocca_ai_siti(s, siti_forza):
+        from . import siti
+        print("Siti delle agenzie:")
+        try:
+            cards += siti.leggi_siti(set(s["annunci"].keys()) | {v.get("key") for v in s["annunci"].values()},
+                                     s.setdefault("siti", {}))
+            s["ultimo_giro_siti_ts"] = time.time()
+            s["ultimo_giro_siti"] = ora
+        except Exception:
+            traceback.print_exc()
 
     nuovi, impronte = [], {v.get("impronta"): k for k, v in s["annunci"].items()}
     for c in cards:
@@ -163,10 +185,12 @@ def cli():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--ogni", type=float, default=0, help="ripeti ogni N minuti")
     ap.add_argument("--file", help="analizza un'email salvata (.eml)")
+    ap.add_argument("--siti", action="store_true", help="leggi i siti delle agenzie anche se non è ora")
+    ap.add_argument("--senza-siti", action="store_true", help="solo email")
     a = ap.parse_args()
     while True:
         try:
-            giro(dry=a.dry_run, file=a.file)
+            giro(dry=a.dry_run, file=a.file, siti_forza=a.siti, niente_siti=a.senza_siti)
         except Exception:
             traceback.print_exc()
         if not a.ogni:

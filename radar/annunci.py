@@ -7,7 +7,9 @@ from . import config
 
 PREZZO = re.compile(r"(?:€\s*([\d.]{2,}(?:,\d{1,2})?)|([\d.]{2,}(?:,\d{1,2})?)\s*(?:€|euro\b))", re.I)
 MQ = re.compile(r"(\d{2,4})(?:[.,]\d+)?\s*(?:m²|m2|mq|metri quadr|sqm)", re.I)
-LOCALI = re.compile(r"(\d)\s*\+?\s*(?:locali|vani|loc\.)", re.I)
+LOCALI = re.compile(r"(\d)\s*\+?\s*\|?\s*(?:locali|locale|vani|vano|loc\.)", re.I)
+LOCALI_DOPO = re.compile(r"\b(?:locali|vani)\s*\|?\s*:?\s*(\d)\b", re.I)
+BAGNI_DOPO = re.compile(r"\bbagni\s*\|?\s*:?\s*(\d)\b", re.I)
 NOMI_LOCALI = {"monolocale": 1, "bilocale": 2, "trilocale": 3, "quadrilocale": 4, "pentalocale": 5}
 CAMERE = re.compile(r"(\d)\s*(?:camere|camera da letto|stanze da letto)", re.I)
 BAGNI = re.compile(r"(\d)\s*bagn", re.I)
@@ -56,15 +58,18 @@ def leggi(testo: str) -> dict:
     """Estrae tutto quello che riesce. I campi non trovati restano None."""
     t = re.sub(r"\s+", " ", testo or "")
     t = re.sub(r"€\s*\|\s*", "€ ", t)          # Casa.it: "€ | 149.000"
+    t = re.sub(r"(\d)\s*\|\s*(m²|mq|m2)\b", r"\1 \2", t)          # Gabetti: "76 | m²"
+    t = re.sub(r"(\d+)\s*\|\s*m\s*\|\s*2\b", r"\1 m²", t)        # Vistocasa: "90 | m | 2"
+    t = re.sub(r"(\d+)\s*Mq\b", r"\1 mq", t)                        # Tecnocasa: "71 Mq"
     low = t.lower()
     d: dict = {"prezzo": prezzo(t)}
     m = MQ.search(t)
     d["mq"] = int(m.group(1)) if m else None
-    m = LOCALI.search(t)
+    m = LOCALI.search(t) or LOCALI_DOPO.search(t)
     d["locali"] = int(m.group(1)) if m else next((n for k, n in NOMI_LOCALI.items() if k in low), None)
     m = CAMERE.search(t)
     d["camere"] = int(m.group(1)) if m else None
-    m = BAGNI.search(t)
+    m = BAGNI.search(t) or BAGNI_DOPO.search(t)
     d["bagni"] = int(m.group(1)) if m else None
     m = PIANO.search(t)
     if m:
@@ -81,8 +86,13 @@ def leggi(testo: str) -> dict:
     d["occupato"] = bool(OCCUPATO.search(t))
     d["non_visitabile"] = bool(NON_VISITABILE.search(t))
     # la tipologia sta nel titolo (prima riga): "Box auto in vendita..." non "...con box auto"
-    titolo = (testo or "").split(" | ")[0]
-    d["non_casa"] = bool(NON_CASA.search(titolo)) or bool(re.search(r"nuda propriet|quota di|% di propriet|posto letto", low))
+    # la tipologia sta nelle prime righe (titolo): "Negozio in via...", "Stanza singola..."
+    titolo = " | ".join((testo or "").split(" | ")[:6])
+    # prima riga, oppure una riga-titolo successiva ("Negozio in via dei Mille, Bari");
+    # una riga corta come "posto auto" è una dotazione, non la tipologia
+    righe = titolo.split(" | ")
+    d["non_casa"] = bool(NON_CASA.search(righe[0])) or any(
+        NON_CASA.search(x) and len(x) > 15 for x in righe[1:]) or bool(re.search(r"nuda propriet|quota di|% di propriet|posto letto", low))
     d["indipendente"] = bool(INDIPENDENTE.search(t))
     d["nuova"] = bool(NUOVA.search(t))
     p = d["prezzo"]

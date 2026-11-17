@@ -1,23 +1,24 @@
 zona;gruppo;parole;vendita_mq;affitto_mq;regola
 San Paolo / CEP / San Pio;Bari;san paolo|cep|san pio|enziteto;0;0;escludi
+Fuori dalle zone scelte;Fuori;castellana grotte|polignano|monopoli|conversano|putignano|rutigliano|gioia del colle|altamura|gravina|molfetta|terlizzi|ruvo|corato|palo del colle|bitetto|casamassima|acquaviva|sammichele|turi|cassano delle murge|grumo|toritto|binetto|sannicandro|cellamare|locorotondo|alberobello|noci|santeramo|porto cesareo|cisternino|ostuni|fasano|trani|barletta|bisceglie|andria|lecce|brindisi|taranto;0;0;escludi
 Madonnella;Bari;madonnella;2915;13.56;
 Murat (centro);Bari;murat|centro murattiano;2915;13.56;solo_con_box
 Umbertino;Bari;umbertino|umbertina;2915;13.56;solo_con_box
 Bari Vecchia;Bari;borgo antico|bari vecchia|san nicola;2915;13.56;
 Libertà;Bari;libertà|liberta;2048;12.20;
 Marconi / San Cataldo;Bari;marconi|san cataldo;2048;12.20;
-San Girolamo / Fesca;Bari;san girolamo|fesca;2431;12.12;
+San Girolamo / Fesca;Bari;san girolamo|s. girolamo|fesca;2431;12.12;
 Stanic;Bari;stanic|villaggio del lavoratore;1662;10.93;
 Palese / Macchie;Bari;palese|macchie;2084;9.99;
 Santo Spirito;Bari;santo spirito|s. spirito;2084;9.99;
 Carrassi;Bari;carrassi;2601;14.05;
-San Pasquale;Bari;san pasquale;2601;14.05;
+San Pasquale;Bari;san pasquale|s. pasquale|s.pasquale;2601;14.05;
 Picone;Bari;picone;2601;14.05;
 Mungivacca;Bari;mungivacca;2601;14.05;
 Poggiofranco;Bari;poggiofranco|santa caterina;2531;11.79;
 Japigia;Bari;japigia;2418;12.80;
 San Giorgio;Bari;san giorgio;2418;12.80;
-Sant'Anna;Bari;sant'anna|santanna;2418;12.80;
+Sant'Anna;Bari;sant'anna|santanna|s. anna;2418;12.80;
 Torre a Mare;Bari;torre a mare;2418;12.80;
 Carbonara;Bari;carbonara;1700;9.41;
 Ceglie del Campo;Bari;ceglie;1700;9.41;
@@ -32,3 +33,4 @@ Adelfia;Comuni vicini;adelfia;1282;6.95;
 Mola di Bari;Comuni vicini;mola di bari;1512;7.72;
 Bitonto;Comuni vicini;bitonto;1343;7.64;
 Giovinazzo;Comuni vicini;giovinazzo;2046;10.08;
+Bari (quartiere non indicato);Bari;bari;2353;12.90;generica

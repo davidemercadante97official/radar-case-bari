@@ -18,18 +18,22 @@ class Zona:
     parole: list[str]
     vendita_mq: float
     affitto_mq: float
-    regola: str            # "", "escludi", "solo_con_box"
+    regola: str            # "", "escludi", "solo_con_box", "generica"
 
     def media(self, affitto: bool) -> float:
         return self.affitto_mq if affitto else self.vendita_mq
 
 
-STRADE = r"(?<!via )(?<!viale )(?<!strada )(?<!piazza )(?<!corso )(?<!largo )(?<!vico )"
+# Nomi di strade da togliere prima di cercare la zona: "Via Giovanni Modugno - Poggiofranco"
+# è a Poggiofranco, "via San Paolo 17, Noicattaro" è a Noicattaro. Il nome della strada
+# finisce alla prima virgola, trattino, barra o parola come "in", "a", "zona".
+STRADA = re.compile(
+    r"\b(?:via|viale|corso|piazza|piazzetta|strada|largo|vico|contrada|traversa|lungomare)\s+"
+    r"[^,|\-–(\n]{2,45}?(?=\s*[,|\-–(\n]|\s+(?:in|a|zona|quartiere)\s|$)")
 
 
 def _pattern(p: str) -> re.Pattern:
-    # "via San Paolo", "via Capurso", "viale Japigia": sono strade, non zone
-    return re.compile(STRADE + r"(?<![\w'])" + re.escape(p.lower()) + r"(?![\w])")
+    return re.compile(r"(?<![\w'])" + re.escape(p.lower()) + r"(?![\w])")
 
 
 @lru_cache(maxsize=1)
@@ -48,11 +52,14 @@ def _compiled():
 
 
 def trova(testo: str) -> Zona | None:
-    """La zona citata nel testo. Le zone escluse vincono su tutto, poi l'ordine del CSV."""
-    t = (testo or "").lower()
+    """La zona citata nel testo. Le zone escluse vincono su tutto, poi l'ordine del CSV.
+    Se c'è solo "Bari" senza quartiere: la zona generica (media di Bari città)."""
+    t = STRADA.sub(" ", (testo or "").lower())
     hits = [z for z, pats in _compiled() if any(p.search(t) for p in pats)]
+    generiche = [z for z in hits if z.regola == "generica"]
+    hits = [z for z in hits if z.regola != "generica"]
     if not hits:
-        return None
+        return generiche[0] if generiche else None
     for z in hits:
         if z.regola == "escludi":
             return z

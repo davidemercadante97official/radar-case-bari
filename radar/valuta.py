@@ -5,6 +5,9 @@ from . import config
 from .zone import trova
 
 LIVELLI = ["super", "buono", "media", "caro"]
+URL_NON_CASA = __import__("re").compile(
+    r"stanz|posto-letto|posti-letto|negozi|uffici|box-auto|/box/|garage|magazzin|capannon|terren|"
+    r"locale-commerciale|locali-commerciali|laboratori|deposit|cantin")
 
 
 def valuta(a: dict) -> dict:
@@ -23,7 +26,7 @@ def valuta(a: dict) -> dict:
     if (config.COMUNI_SOLO_VILLE_E_NUOVE and z.gruppo != "Bari"
             and not (a.get("indipendente") or a.get("nuova"))):
         return {**a, "scarta": "comune vicino: solo ville/villette o nuova costruzione"}
-    if a.get("non_casa"):
+    if a.get("non_casa") or URL_NON_CASA.search(a.get("url", "").lower()):
         return {**a, "scarta": "non è un'abitazione intera (box, negozio, stanza, quota...)"}
     if a.get("asta") and a.get("non_visitabile"):
         return {**a, "scarta": "asta non visitabile"}
@@ -39,6 +42,9 @@ def valuta(a: dict) -> dict:
     a["scarta"] = None
     a["media_mq"] = z.media(aff)
     note = []
+    if z.regola == "generica":
+        note.append("⚠️ Quartiere non indicato: confronto con la media di Bari. Controlla la via "
+                    "(niente San Paolo, CEP, San Pio; Murat e Umbertino solo con box)")
     if z.gruppo != "Bari" and a.get("indipendente"):
         note.append("🏡 Villa / casa indipendente")
     if a.get("nuova") and not aff:

@@ -36,6 +36,12 @@ NOTIFICA_MEDIA_CON_BOX = True
 MAX_MESSAGGI_PER_GIRO = 25
 SILENZIOSI = True              # solo i super affari suonano
 
+# --- Siti delle agenzie ---------------------------------------------------------
+# Lettura diretta dei siti (radar/siti.py). Con il repository privato i minuti gratis di
+# GitHub sono 2.000 al mese: i siti si leggono ogni 4 ore, le email ogni 30 minuti.
+SITI_ATTIVI = True
+SITI_OGNI_ORE = 4
+
 # --- Email ---------------------------------------------------------------------
 # Mittenti degli avvisi delle ricerche salvate
 MITTENTI = ["immobiliare.it", "idealista.it", "idealista.com", "casa.it", "subito.it",
