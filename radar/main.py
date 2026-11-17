@@ -122,6 +122,7 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
             traceback.print_exc()
 
     nuovi, impronte = [], {v.get("impronta"): k for k, v in s["annunci"].items()}
+    nuovi_per_id: dict[str, dict] = {}
     for c in cards:
         a = prepara(c)
         old = s["annunci"].get(a["id"])
@@ -137,12 +138,16 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
                 nuovi.append(a)
             continue
         if dup and dup != a["id"] and a.get("mq"):
-            altri = s["annunci"][dup].setdefault("altri_link", [])
-            if a["url"] not in altri and a["url"] != s["annunci"][dup].get("url"):
-                altri.append(a["url"])
-            continue
+            # stesso appartamento già visto (in un giro passato o poco fa in questo giro)
+            orig = s["annunci"].get(dup) or nuovi_per_id.get(dup)
+            if orig is not None:
+                altri = orig.setdefault("altri_link", [])
+                if a["url"] not in altri and a["url"] != orig.get("url"):
+                    altri.append(a["url"])
+                continue
         a["primo"] = a["visto"] = ora
         nuovi.append(a)
+        nuovi_per_id[a["id"]] = a
         if a.get("mq"):
             impronte[a["impronta"]] = a["id"]
 
