@@ -36,6 +36,7 @@ NOTIFICA = {"super", "buono"}
 # Le case con box/posto auto in zona buona arrivano anche se "nella media"
 NOTIFICA_MEDIA_CON_BOX = True
 MAX_MESSAGGI_PER_GIRO = 25
+DASHBOARD = "https://davidemercadante97official.github.io/radar-case-bari/"
 SILENZIOSI = True              # solo i super affari suonano
 
 # --- Siti delle agenzie ---------------------------------------------------------

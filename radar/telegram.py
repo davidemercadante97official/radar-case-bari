@@ -194,5 +194,6 @@ def _comando(stato, m):
     elif t in ("/stato", "/start", "/aiuto"):
         testo(f"🏠 <b>Radar case Bari</b>\nUltimo giro: {e(stato.get('ultimo_giro', 'mai'))}\n"
               f"Annunci in memoria: {len(ann)}\n\n"
+              f'📊 <a href="{config.DASHBOARD}">Dashboard</a>\n\n'
               "/migliori: i più convenienti\n/preferiti: quelli con ❤️ 📞 🗓\n/stato: questo messaggio\n\n"
               "Sotto ogni annuncio: ❤️ 📞 🗓 ❌. Un secondo tocco annulla.")
