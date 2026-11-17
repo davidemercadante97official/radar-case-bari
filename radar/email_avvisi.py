@@ -30,7 +30,7 @@ FONTE = {"immobiliare": "Immobiliare.it", "idealista": "Idealista", "casa.it": "
          "pvp": "Portale Vendite Pubbliche"}
 SALTA_LINK = re.compile(r"unsubscribe|disiscriv|cancella|preferenz|privacy|app\.|play\.google|"
                         r"apps\.apple|facebook|instagram|twitter|linkedin|youtube|mailto:", re.I)
-FINE_SCHEDA = re.compile(r"Vedi \d+ foto|Scarica l'app|Questa email ti è stata|Non vuoi più ricevere|"
+FINE_SCHEDA = re.compile(r"\bVedi \d+ foto|Scarica l'app|Questa email ti è stata|Non vuoi più ricevere|"
                          r"Modifica (?:la )?ricerca|Gestisci (?:i tuoi )?avvisi", re.I)
 BLOCCHI = {"p", "div", "tr", "td", "li", "br", "table", "h1", "h2", "h3", "h4", "span"}
 
