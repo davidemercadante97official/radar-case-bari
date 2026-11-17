@@ -8533,6 +8533,40 @@
    "primo": "17/11 23:47",
    "visto": "17/11 23:47",
    "primo_ts": 1794956079
+  },
+  "6d7c6fdbfd1fdc4d": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37516411/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T004011&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=8b8c31c6-a7f1-4d3c-9396-f017e33a3c69",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "6d7c6fdbfd1fdc4d",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "18/11 00:41",
+   "visto": "18/11 00:41",
+   "primo_ts": 1794958921
   }
  },
  "email_lette": [
@@ -8545,10 +8579,11 @@
   "<20261117201905.2B7F1440F2E@mx1s.idealista.com>",
   "<d351b93e-094b-63c0-4423-5bee3df6126d@casa.it>",
   "<20261117211849.D17AD180203@mxs8.idealista.com>",
-  "<20261117220652.BBD877C04E7@mx4s.idealista.com>"
+  "<20261117220652.BBD877C04E7@mx4s.idealista.com>",
+  "<20261117234011.AA6001D800DC@mx3s.idealista.com>"
  ],
  "tg_offset": 928800421,
- "ultimo_giro": "17/11 23:47",
+ "ultimo_giro": "18/11 00:41",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -8628,7 +8663,7 @@
  },
  "ultimo_giro_siti_ts": 1794956078.7494214,
  "ultimo_giro_siti": "17/11 23:47",
- "ultimo_giro_ts": 1794956079,
+ "ultimo_giro_ts": 1794958921,
  "fonti": {
   "Email (portali)": {
    "ok": true,
