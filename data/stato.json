@@ -12974,6 +12974,74 @@
    "primo": "18/11 21:37",
    "visto": "18/11 23:33",
    "primo_ts": 1795034707
+  },
+  "93b9a91b45cd8633": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37530987/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-19T001250&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=a8d4d282-4e89-4b77-b760-632eaa125109",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "93b9a91b45cd8633",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "19/11 00:30",
+   "visto": "19/11 00:30",
+   "primo_ts": 1795044703
+  },
+  "1f3fc3d4b2d2acf8": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37531080/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-19T002253&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=334b1b39-162e-42eb-aa5f-7595cacfe25c",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "1f3fc3d4b2d2acf8",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "19/11 00:30",
+   "visto": "19/11 00:30",
+   "primo_ts": 1795044703
   }
  },
  "email_lette": [
@@ -13075,10 +13143,12 @@
   "<00947f84-3ad7-8dcf-e136-7830589197cb@casa.it>",
   "<20261118190052.A6C8B7C064F@mx4s.idealista.com>",
   "<25ad69ef-c87e-b639-20fc-5f818734ab7d@casa.it>",
-  "<75.64.15737.89D1EFA6@i-0f652b6bbdbb08330.mta3vrest.sd.prd.sparkpost>"
+  "<75.64.15737.89D1EFA6@i-0f652b6bbdbb08330.mta3vrest.sd.prd.sparkpost>",
+  "<20261118231250.5664980073C@mx2s.idealista.com>",
+  "<20261118232253.56A26800230@mx2s.idealista.com>"
  ],
  "tg_offset": 928800432,
- "ultimo_giro": "18/11 23:33",
+ "ultimo_giro": "19/11 00:30",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -13158,11 +13228,11 @@
  },
  "ultimo_giro_siti_ts": 1795041637.295115,
  "ultimo_giro_siti": "18/11 23:33",
- "ultimo_giro_ts": 1795041637,
+ "ultimo_giro_ts": 1795044703,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "1 email nuove in questo giro"
+   "nota": "2 email nuove in questo giro"
   }
  }
 }
