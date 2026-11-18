@@ -12782,6 +12782,82 @@
    "primo": "18/11 19:43",
    "visto": "18/11 19:43",
    "primo_ts": 1795027895
+  },
+  "c28a9c22b177e11c": {
+   "prezzo": 74625.0,
+   "mq": 96,
+   "locali": 4,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": true,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55250691/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita in Via Canonico Bux 30,, Libertà, Bari (BA)",
+   "id": "c28a9c22b177e11c",
+   "zona": "Libertà",
+   "gruppo": "Bari",
+   "scarta": null,
+   "media_mq": 2048.0,
+   "eur_mq": 777.0,
+   "rapporto": 0.38,
+   "livello": "super",
+   "note": [
+    "⚖️ ASTA: il prezzo è la base d'asta; si può offrire fino al 25% in meno (offerta minima). Leggi perizia e avviso di vendita"
+   ],
+   "impronta": "ff627224e8ef",
+   "primo": "18/11 20:44",
+   "visto": "18/11 20:44",
+   "msg_id": 85,
+   "primo_ts": 1795031086
+  },
+  "1d5624fa6886d5ec": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37529842/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T200052&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=57d19d2d-9232-47d9-8b0a-d5797ec50f3e",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "1d5624fa6886d5ec",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "18/11 20:44",
+   "visto": "18/11 20:44",
+   "primo_ts": 1795031086
   }
  },
  "email_lette": [
@@ -12879,10 +12955,12 @@
   "<7269d5d9-4445-f7db-4e53-0d1722d05a61@casa.it>",
   "<20261118175451.4915F1D800A1@mx3s.idealista.com>",
   "<67.5E.39790.488EDFA6@i-0933ece6f66bb490d.mta3vrest.sd.prd.sparkpost>",
-  "<B9.D1.42794.55EEDFA6@i-047fca55162be13b4.mta3vrest.sd.prd.sparkpost>"
+  "<B9.D1.42794.55EEDFA6@i-047fca55162be13b4.mta3vrest.sd.prd.sparkpost>",
+  "<00947f84-3ad7-8dcf-e136-7830589197cb@casa.it>",
+  "<20261118190052.A6C8B7C064F@mx4s.idealista.com>"
  ],
  "tg_offset": 928800432,
- "ultimo_giro": "18/11 19:43",
+ "ultimo_giro": "18/11 20:44",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -12962,11 +13040,11 @@
  },
  "ultimo_giro_siti_ts": 1795027894.886088,
  "ultimo_giro_siti": "18/11 19:43",
- "ultimo_giro_ts": 1795027895,
+ "ultimo_giro_ts": 1795031086,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "3 email nuove in questo giro"
+   "nota": "2 email nuove in questo giro"
   }
  }
 }
