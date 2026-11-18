@@ -11660,6 +11660,48 @@
    "primo": "18/11 14:55",
    "visto": "18/11 14:55",
    "primo_ts": 1795010623
+  },
+  "2e936797ad2a9fbd": {
+   "prezzo": 93994.0,
+   "mq": 109,
+   "locali": 4,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": true,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55247236/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita in Via Vaccarella 50c,, Carbonara, Bari (BA)",
+   "id": "2e936797ad2a9fbd",
+   "zona": "Carbonara",
+   "gruppo": "Bari",
+   "scarta": null,
+   "media_mq": 1700.0,
+   "eur_mq": 862.0,
+   "rapporto": 0.507,
+   "livello": "super",
+   "note": [
+    "⚖️ ASTA: il prezzo è la base d'asta; si può offrire fino al 25% in meno (offerta minima). Leggi perizia e avviso di vendita"
+   ],
+   "impronta": "1067a6cc74b0",
+   "primo": "18/11 15:45",
+   "visto": "18/11 15:45",
+   "msg_id": 75,
+   "primo_ts": 1795013158
   }
  },
  "email_lette": [
@@ -11738,10 +11780,13 @@
   "<d4106212-f28c-773e-5505-a8560514af3f@casa.it>",
   "<8C.F8.13919.42D9DFA6@i-0920ce50770982a74.mta3vrest.sd.prd.sparkpost>",
   "<FD.30.06276.F12ADFA6@i-091bc332b909c5cf4.mta3vrest.sd.prd.sparkpost>",
-  "<29.6E.04977.C32ADFA6@i-0ac12410f251e75d8.mta3vrest.sd.prd.sparkpost>"
+  "<29.6E.04977.C32ADFA6@i-0ac12410f251e75d8.mta3vrest.sd.prd.sparkpost>",
+  "<A9.7C.45273.F70BDFA6@i-0709db929489c81ba.mta3vrest.sd.prd.sparkpost>",
+  "<0cc4af8d-f387-825e-fa36-17d9915399a0@casa.it>",
+  "<0A.32.48626.0D1BDFA6@i-0a4052c238ef9303e.mta3vrest.sd.prd.sparkpost>"
  ],
  "tg_offset": 928800432,
- "ultimo_giro": "18/11 14:55",
+ "ultimo_giro": "18/11 15:45",
  "siti": {
   "Tecnocasa": {
    "annunci": 30,
@@ -11823,7 +11868,7 @@
  },
  "ultimo_giro_siti_ts": 1795010623.4111934,
  "ultimo_giro_siti": "18/11 14:55",
- "ultimo_giro_ts": 1795010623,
+ "ultimo_giro_ts": 1795013158,
  "fonti": {
   "Email (portali)": {
    "ok": true,
