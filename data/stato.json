@@ -9078,6 +9078,40 @@
    "primo": "18/11 02:58",
    "visto": "18/11 02:58",
    "primo_ts": 1794967516
+  },
+  "ab894cca3a09aef0": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37518553/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T030350&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=0728ff9c-9dc3-492b-a20a-b7c21e148ad7",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "ab894cca3a09aef0",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "18/11 03:46",
+   "visto": "18/11 03:46",
+   "primo_ts": 1794970045
   }
  },
  "email_lette": [
@@ -9105,10 +9139,11 @@
   "<20261118011542.6BBE61120114@mxs7.idealista.com>",
   "<20261118013235.1D8CF1D80515@mx3s.idealista.com>",
   "<20261118013546.C732E1E802C2@mxs2.idealista.com>",
-  "<20261118014453.A7B9A8000C5@mx2s.idealista.com>"
+  "<20261118014453.A7B9A8000C5@mx2s.idealista.com>",
+  "<20261118020350.43E97440DB3@mx1s.idealista.com>"
  ],
  "tg_offset": 928800421,
- "ultimo_giro": "18/11 02:58",
+ "ultimo_giro": "18/11 03:46",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -9188,11 +9223,11 @@
  },
  "ultimo_giro_siti_ts": 1794967515.9071758,
  "ultimo_giro_siti": "18/11 02:58",
- "ultimo_giro_ts": 1794967516,
+ "ultimo_giro_ts": 1794970045,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "6 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  }
 }
