@@ -13077,7 +13077,7 @@
   "<25ad69ef-c87e-b639-20fc-5f818734ab7d@casa.it>"
  ],
  "tg_offset": 928800432,
- "ultimo_giro": "18/11 21:37",
+ "ultimo_giro": "18/11 22:35",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -13159,11 +13159,11 @@
  },
  "ultimo_giro_siti_ts": 1795034703.80383,
  "ultimo_giro_siti": "18/11 21:37",
- "ultimo_giro_ts": 1795034707,
+ "ultimo_giro_ts": 1795037753,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "1 email nuove in questo giro"
+   "nota": "0 email nuove in questo giro"
   }
  }
 }
