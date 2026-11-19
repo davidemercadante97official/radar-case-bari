@@ -1,0 +1,23 @@
+name: Diagnosi prezzi (temporaneo)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Come Toscano scrive i prezzi visto da GitHub
+        shell: python
+        run: |
+          import re, requests
+          H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+               "Accept-Language": "it-IT,it;q=0.9"}
+          t = requests.get("https://www.toscano.it/vendita/immobili-residenziali/comune-bari", headers=H, timeout=60).content.decode("utf-8")
+          print([t[m.start()-30:m.end()+8].replace("\n", " ") for m in re.finditer(r"&#x20AC;[^<]{1,20}", t)][:6])
+          print([t[m.start()-10:m.end()+10] for m in re.finditer(r'"price":\s*"[^"]+"', t)][:3])
