@@ -13,9 +13,15 @@ SUPER = 0.75                   # 🚨 almeno il 25% sotto la media
 BUONO = 0.88                   # 💡 almeno il 12% sotto la media
 CARO = 1.10                    # 🔺 oltre il 10% sopra la media
 SOSPETTO_AFFITTO = 0.45        # affitto sotto il 45% della media: stanze, studenti o errore
-SOSPETTO_VENDITA = 0.35
+SOSPETTO_VENDITA = 0.35       # vendita sotto il 35%: nuda proprietà, quota, rudere o errore
 # affitto sotto il 35% della media e scheda non leggibile: si scarta (è una stanza)
-STANZA_AFFITTO = 0.35        # vendita sotto il 35%: nuda proprietà, quota, rudere o errore
+STANZA_AFFITTO = 0.35
+
+# --- Controlli di coerenza (prezzi letti male: si scartano, non arrivano mai nel gruppo) ---
+MIN_VENDITA = 10_000                 # una vendita sotto 10.000 € è un errore di lettura
+MAX_AFFITTO_CREDIBILE = 10_000       # un affitto sopra 10.000 €/mese è un errore di lettura
+EUR_MQ_VENDITA = (250, 15_000)       # €/m² possibili in vendita
+EUR_MQ_AFFITTO = (1.5, 80)           # €/m² al mese possibili in affitto
 
 # Una casa da ristrutturare si confronta aggiungendo il costo stimato dei lavori.
 LAVORI_MQ = 500                # € al m² (ristrutturazione media completa a Bari)

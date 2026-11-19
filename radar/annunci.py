@@ -5,7 +5,10 @@ import re
 
 from . import config
 
-PREZZO = re.compile(r"(?:€\s*([\d.]{2,}(?:,\d{1,2})?)|([\d.]{2,}(?:,\d{1,2})?)\s*(?:€|euro\b))", re.I)
+# Prezzo con qualunque separatore: "€ 325.000", "€ 325,000" (siti visti dagli USA, come
+# Toscano da GitHub), "350.000,00 €", "1,250.50 €", "€ 1 200". numero() decide cosa è decimale.
+_NUM = r"(?:\d{1,3}(?:[.,'   ]\d{3})+(?![\d])(?:[.,]\d{1,2}(?![\d]))?|\d+(?:[.,]\d{1,2}(?![\d]))?)"
+PREZZO = re.compile(r"(?:€\s*(" + _NUM + r")|(" + _NUM + r")\s*(?:€|euro\b))", re.I)
 MQ = re.compile(r"(\d{2,4})(?:[.,]\d+)?\s*(?:m²|m2|mq|metri quadr|sqm)", re.I)
 LOCALI = re.compile(r"(\d)\s*\+?\s*\|?\s*(?:locali|locale|vani|vano|loc\.)", re.I)
 LOCALI_DOPO = re.compile(r"\b(?:locali|vani)\s*\|?\s*:?\s*(\d)\b", re.I)
@@ -47,14 +50,46 @@ TRANSITORIO = re.compile(r"\btransitori[oa]\b|\bnatura transitoria|\bfino al? \d
 AFFITTO_PAROLE = re.compile(r"\baffitt|\blocazione|/mese|al mese|mensil", re.I)
 
 
+MIGLIAIA_PUNTO = re.compile(r"^\d{1,3}(?:\.\d{3})+$")     # 325.000  1.250.000
+MIGLIAIA_VIRGOLA = re.compile(r"^\d{1,3}(?:,\d{3})+$")    # 325,000  1,250,000
+
+
 def numero(txt: str) -> float | None:
-    txt = txt.replace(".", "").replace(" ", "")
-    if "," in txt:
-        txt = txt.replace(",", ".")
+    """Numero scritto all'italiana o all'inglese. Un separatore seguito da gruppi di 3 cifre
+    è delle migliaia; se ci sono punto e virgola, l'ultimo dei due è il decimale."""
+    t = re.sub(r"[\s'  ]", "", txt or "")
+    if not t:
+        return None
+    if "," in t and "." in t:
+        dec = "," if t.rfind(",") > t.rfind(".") else "."
+        mil = "." if dec == "," else ","
+        t = t.replace(mil, "").replace(dec, ".")
+    elif "," in t:
+        t = t.replace(",", "") if MIGLIAIA_VIRGOLA.match(t) else t.replace(",", ".")
+    elif "." in t:
+        t = t.replace(".", "") if MIGLIAIA_PUNTO.match(t) else t
     try:
-        return float(txt)
+        return float(t)
     except ValueError:
         return None
+
+
+# Tipo di contratto dichiarato nel titolo (le prime righe dell'annuncio)
+VENDITA_PAROLE = re.compile(r"\bin vendita\b|\bvendesi\b|\bvendita\b|\bin asta\b|\basta giudiziaria\b", re.I)
+AFFITTO_TITOLO = re.compile(r"\bin affitto\b|\baffittasi\b|\bin locazione\b|\blocazione\b|\baffitto\b", re.I)
+VENDITA_URL = re.compile(r"vendit|/vendite/|[?&]c=ven|tipo_contratto=v\b|/asta|-asta-", re.I)
+AFFITTO_URL = re.compile(r"affitt|/locazion|[?&]c=aff|tipo_contratto=a\b", re.I)
+
+
+def contratto(titolo: str, url: str = "") -> str | None:
+    """"vendita", "affitto" o None se non si capisce. Prima il titolo, poi l'indirizzo."""
+    v, a = bool(VENDITA_PAROLE.search(titolo or "")), bool(AFFITTO_TITOLO.search(titolo or ""))
+    if v != a:
+        return "vendita" if v else "affitto"
+    v, a = bool(VENDITA_URL.search(url or "")), bool(AFFITTO_URL.search(url or ""))
+    if v != a:
+        return "vendita" if v else "affitto"
+    return None
 
 
 def prezzo(testo: str) -> float | None:
@@ -109,5 +144,11 @@ def leggi(testo: str) -> dict:
     d["indipendente"] = bool(INDIPENDENTE.search(t))
     d["nuova"] = bool(NUOVA.search(t))
     p = d["prezzo"]
-    d["affitto"] = bool(p and p < config.SOGLIA_AFFITTO) or (bool(AFFITTO_PAROLE.search(t)) and bool(p and p < 10_000))
+    # il contratto dichiarato nel titolo vince sul prezzo: una "Casa in vendita" non è mai un
+    # affitto, anche se il prezzo letto è basso (quello è un errore e va scartato, non inviato)
+    d["contratto"] = contratto(titolo)
+    if d["contratto"]:
+        d["affitto"] = d["contratto"] == "affitto"
+    else:
+        d["affitto"] = bool(p and p < config.SOGLIA_AFFITTO) or (bool(AFFITTO_PAROLE.search(t)) and bool(p and p < 10_000))
     return d

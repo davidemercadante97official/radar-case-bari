@@ -114,6 +114,41 @@ class TestRadar(unittest.TestCase):
         self.assertTrue(any("transitorio" in n for n in breve["note"]))
         self.assertIn("stanza", portale["scarta"])          # 3 €/m² senza scheda leggibile: è una stanza
 
+    def test_prezzi_formato_americano(self):
+        # Toscano visto dai server di GitHub (USA) scrive "€ 325,000": sono 325 mila, non 325 €
+        from radar.annunci import prezzo
+        for testo, atteso in [("€ 325,000", 325000), ("€ 325.000", 325000), ("350.000,00 €", 350000),
+                              ("1,250.50 €", 1250.5), ("€ 1 200", 1200), ("prezzo base € 60.000, 80 mq", 60000),
+                              ("800 €/mese", 800), ("€ 1,250,000", 1250000)]:
+            self.assertEqual(prezzo(testo), atteso, testo)
+        base = {"fonte": "Toscano", "img": None, "scheda_letta": True,
+                "url": "https://www.toscano.it/comune-bari/1216732-appartamento-via-luigi-luzzatti"}
+        a = prepara({**base, "key": "t:1", "testo": "Casa in vendita, Via Luigi Luzzatti, Japigia, Bari | € 220,000 | 45 m²"})
+        self.assertFalse(a["affitto"])
+        self.assertEqual(a["prezzo"], 220000)
+
+    def test_contratto_e_coerenza(self):
+        base = {"fonte": "T", "img": None, "scheda_letta": True}
+        # vendita con prezzo letto male (220 €): scartata, MAI inviata come affitto
+        v = prepara({**base, "key": "c:1", "url": "https://agenzia.it/vendita/1",
+                     "testo": "Casa in vendita, Japigia, Bari | € 220 | 45 m²"})
+        self.assertFalse(v["affitto"])
+        self.assertIn("incoerente", v["scarta"])
+        # contratto dall'indirizzo quando il titolo non lo dice
+        u = prepara({**base, "key": "c:2", "url": "https://agenzia.it/vendita/2",
+                     "testo": "Trilocale, Japigia, Bari | € 900 | 90 m²"})
+        self.assertFalse(u["affitto"])
+        self.assertIsNotNone(u["scarta"])
+        # affitto vero resta affitto
+        f = prepara({**base, "key": "c:3", "url": "https://agenzia.it/affitto/3",
+                     "testo": "Trilocale in affitto, Japigia, Bari | € 800 | 90 m²"})
+        self.assertTrue(f["affitto"])
+        self.assertIsNone(f["scarta"])
+        # €/m² impossibile
+        x = prepara({**base, "key": "c:4", "url": "https://agenzia.it/x/4",
+                     "testo": "Trilocale in vendita, Japigia, Bari | € 15.000 | 90 m²"})
+        self.assertIn("impossibile", x["scarta"])
+
     def test_siti_schede(self):
         import re
         from bs4 import BeautifulSoup

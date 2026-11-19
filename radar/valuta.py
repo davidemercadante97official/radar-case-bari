@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from . import config
+from .annunci import contratto
 from .zone import trova
 
 LIVELLI = ["super", "buono", "media", "caro"]
@@ -35,6 +36,21 @@ def valuta(a: dict) -> dict:
         return {**a, "scarta": "asta non visitabile"}
     if not p:
         return {**a, "scarta": "prezzo mancante"}
+    # --- controlli di coerenza: un prezzo letto male non deve MAI arrivare nel gruppo ---
+    tipo = a.get("contratto") or contratto("", a.get("url", ""))
+    if tipo:
+        a["contratto"] = tipo
+        a["affitto"] = aff = tipo == "affitto"
+    if not aff and p < config.MIN_VENDITA:
+        return {**a, "scarta": f"prezzo incoerente: vendita a {p:,.0f} € (letto male)".replace(",", ".")}
+    if aff and p > config.MAX_AFFITTO_CREDIBILE:
+        return {**a, "scarta": f"prezzo incoerente: affitto a {p:,.0f} € al mese (letto male)".replace(",", ".")}
+    if mq:
+        emq = p / mq
+        lim = config.EUR_MQ_AFFITTO if aff else config.EUR_MQ_VENDITA
+        if not lim[0] <= emq <= lim[1]:
+            return {**a, "scarta": f"prezzo al m² impossibile ({emq:,.2f} €/m²): letto male".replace(",", "X")
+                    .replace(".", ",").replace("X", ".")}
     if aff and p > config.MAX_AFFITTO:
         return {**a, "scarta": "affitto sopra il budget"}
     if not aff and p > config.MAX_VENDITA:
