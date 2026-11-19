@@ -15008,6 +15008,41 @@
    "primo": "19/11 14:58",
    "visto": "19/11 14:58",
    "primo_ts": 1795097204
+  },
+  "01eae561d489faf2": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37534426/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-19T154415&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=6fa62019-f68d-4e94-bd7b-2781c6d45ec0",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "01eae561d489faf2",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "19/11 15:49",
+   "visto": "19/11 15:49",
+   "primo_ts": 1795099842
   }
  },
  "email_lette": [
@@ -15151,10 +15186,11 @@
   "<9e1c7631-ca15-fd31-f5b2-e06ec63ae147@casa.it>",
   "<b66bedd5-91f5-f1ab-1b24-3f1edea8c4ef@casa.it>",
   "<1F.BE.16326.124FEFA6@i-07f3594aa66d93530.mta3vrest.sd.prd.sparkpost>",
-  "<f1325c76-546e-146b-7f73-f75fc6c6296c@casa.it>"
+  "<f1325c76-546e-146b-7f73-f75fc6c6296c@casa.it>",
+  "<20261119144415.4F1E97C0C2D@mx4s.idealista.com>"
  ],
  "tg_offset": 928800433,
- "ultimo_giro": "19/11 14:58",
+ "ultimo_giro": "19/11 15:49",
  "siti": {
   "Tecnocasa": {
    "annunci": 30,
@@ -15236,11 +15272,11 @@
  },
  "ultimo_giro_siti_ts": 1795097204.3467884,
  "ultimo_giro_siti": "19/11 14:58",
- "ultimo_giro_ts": 1795097204,
+ "ultimo_giro_ts": 1795099842,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "2 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  }
 }
