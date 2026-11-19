@@ -16134,6 +16134,41 @@
    "visto": "19/11 20:54",
    "msg_id": 118,
    "primo_ts": 1795118557
+  },
+  "18d776f631ee9d16": {
+   "prezzo": 150000.0,
+   "mq": 95,
+   "locali": 3,
+   "camere": null,
+   "bagni": 2,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55259884/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita, Capurso (BA)",
+   "id": "18d776f631ee9d16",
+   "zona": "Capurso",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "e89a1051d85f",
+   "primo": "19/11 21:45",
+   "visto": "19/11 21:45",
+   "primo_ts": 1795121158
   }
  },
  "email_lette": [
@@ -16293,10 +16328,11 @@
   "<816ce392-bce6-0be8-c5c0-757ff017772c@casa.it>",
   "<69.49.65349.3834FFA6@i-0a06df6a8c8da5ab7.mta3vrest.sd.prd.sparkpost>",
   "<79.59.28658.F115FFA6@i-000113ab901b16e0a.mta3vrest.sd.prd.sparkpost>",
-  "<e9456f79-0e0f-892b-3598-6ca8be83cf3a@casa.it>"
+  "<e9456f79-0e0f-892b-3598-6ca8be83cf3a@casa.it>",
+  "<0292dc94-999b-b7e4-e592-d97d4cdbb335@casa.it>"
  ],
  "tg_offset": 928800433,
- "ultimo_giro": "19/11 20:54",
+ "ultimo_giro": "19/11 21:45",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -16376,11 +16412,11 @@
  },
  "ultimo_giro_siti_ts": 1795118552.4974306,
  "ultimo_giro_siti": "19/11 20:54",
- "ultimo_giro_ts": 1795118557,
+ "ultimo_giro_ts": 1795121158,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "2 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  }
 }
