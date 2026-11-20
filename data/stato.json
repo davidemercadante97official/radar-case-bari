@@ -9207,7 +9207,8 @@
    "altri_link": [
     "https://www.idealista.it/immobile/37511147/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T110552&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=7249b5b1-55b1-4cc8-a7a1-aaddcfb1f499",
     "https://www.idealista.it/immobile/37520760/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-19T110507&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=19f115a5-da96-4286-b486-10d355eb947b",
-    "https://www.casa.it/immobili/55256064/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+    "https://www.casa.it/immobili/55256064/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+    "https://www.idealista.it/immobile/37537890/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
    ],
    "primo_ts": 1794997918
   },
@@ -9448,7 +9449,8 @@
    "visto": "18/11 13:38",
    "primo_ts": 1794997918,
    "altri_link": [
-    "https://www.casa.it/immobili/55259046/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+    "https://www.casa.it/immobili/55259046/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+    "https://www.idealista.it/immobile/37541086/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
    ]
   },
   "44131dcb34896930": {
@@ -9975,7 +9977,8 @@
    "primo": "18/11 11:30",
    "visto": "18/11 11:30",
    "altri_link": [
-    "https://www.idealista.it/immobile/37510733/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T110552&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=7249b5b1-55b1-4cc8-a7a1-aaddcfb1f499"
+    "https://www.idealista.it/immobile/37510733/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-18T110552&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=7249b5b1-55b1-4cc8-a7a1-aaddcfb1f499",
+    "https://www.idealista.it/immobile/37535428/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
    ],
    "msg_id": 57,
    "primo_ts": 1794997918
@@ -12486,7 +12489,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 00:30",
-   "visto": "19/11 00:30",
+   "visto": "20/11 11:51",
    "primo_ts": 1795044703
   },
   "745da2b5187c64bc": {
@@ -13859,7 +13862,10 @@
    "impronta": "91bf4bb4ea5f",
    "primo": "19/11 10:33",
    "visto": "19/11 10:33",
-   "primo_ts": 1795081266
+   "primo_ts": 1795081266,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37534942/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "51e8c5f7f6730ecf": {
    "prezzo": null,
@@ -13893,7 +13899,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 10:33",
-   "visto": "19/11 10:33",
+   "visto": "20/11 11:51",
    "primo_ts": 1795081266
   },
   "8a9ec1d74dd11ef3": {
@@ -14252,7 +14258,10 @@
    "impronta": "71ecc0b567b1",
    "primo": "19/11 11:36",
    "visto": "19/11 13:42",
-   "primo_ts": 1795085094
+   "primo_ts": 1795085094,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37535334/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "8b224eb8700cc196": {
    "prezzo": 139000.0,
@@ -14287,7 +14296,10 @@
    "impronta": "a3e5aa1f236b",
    "primo": "19/11 11:36",
    "visto": "19/11 13:42",
-   "primo_ts": 1795085094
+   "primo_ts": 1795085094,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37535341/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "98260d188dee3a56": {
    "prezzo": null,
@@ -14321,7 +14333,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 11:36",
-   "visto": "19/11 11:36",
+   "visto": "20/11 11:51",
    "primo_ts": 1795085094
   },
   "0c6d9f06d00b4824": {
@@ -14684,7 +14696,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 11:36",
-   "visto": "19/11 11:36",
+   "visto": "20/11 11:51",
    "primo_ts": 1795085094
   },
   "93610be34be37036": {
@@ -14755,7 +14767,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 13:42",
-   "visto": "19/11 13:42",
+   "visto": "20/11 11:51",
    "primo_ts": 1795092618
   },
   "c17df23fdee0582c": {
@@ -14791,7 +14803,10 @@
    "impronta": "1bd1b2ad18da",
    "primo": "19/11 13:42",
    "visto": "19/11 13:42",
-   "primo_ts": 1795092618
+   "primo_ts": 1795092618,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37537299/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "73afca60d7377634": {
    "prezzo": 60000.0,
@@ -15117,7 +15132,7 @@
    "scarta": "zona non riconosciuta o non nella lista",
    "impronta": "5ce4d2901896",
    "primo": "19/11 17:55",
-   "visto": "19/11 17:55",
+   "visto": "20/11 11:51",
    "primo_ts": 1795107764
   },
   "e8561117d3d06cac": {
@@ -15634,7 +15649,8 @@
    "visto": "20/11 10:50",
    "primo_ts": 1795107764,
    "altri_link": [
-    "https://www.casa.it/immobili/55259726/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+    "https://www.casa.it/immobili/55259726/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+    "https://www.idealista.it/immobile/37541661/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
    ]
   },
   "f61865c2150bbcf7": {
@@ -15706,7 +15722,10 @@
    "impronta": "37c5e8170467",
    "primo": "19/11 18:49",
    "visto": "19/11 18:49",
-   "primo_ts": 1795110604
+   "primo_ts": 1795110604,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37540450/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "35de1fea91d2ef00": {
    "prezzo": 160000.0,
@@ -15749,7 +15768,10 @@
    "primo": "19/11 18:49",
    "visto": "19/11 18:49",
    "msg_id": 116,
-   "primo_ts": 1795110604
+   "primo_ts": 1795110604,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37540231/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "9b7fab6d2c8d3a43": {
    "prezzo": 108750.0,
@@ -15784,7 +15806,10 @@
    "impronta": "2949a168c369",
    "primo": "19/11 19:49",
    "visto": "19/11 19:49",
-   "primo_ts": 1795114652
+   "primo_ts": 1795114652,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37541092/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "9d7c1ced22e2dbbc": {
    "prezzo": 150000.0,
@@ -16168,7 +16193,10 @@
    "impronta": "e89a1051d85f",
    "primo": "19/11 21:45",
    "visto": "19/11 21:45",
-   "primo_ts": 1795121158
+   "primo_ts": 1795121158,
+   "altri_link": [
+    "https://www.idealista.it/immobile/37541841/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26"
+   ]
   },
   "896ea2e652de23d6": {
    "prezzo": null,
@@ -17398,6 +17426,375 @@
    "primo": "20/11 10:50",
    "visto": "20/11 10:50",
    "primo_ts": 1795168763
+  },
+  "309171eeb2fc55db": {
+   "prezzo": 900.0,
+   "mq": 60,
+   "locali": 1,
+   "camere": null,
+   "bagni": null,
+   "piano": "3°",
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": false,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "affitto",
+   "affitto": true,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37076194/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyLowPricePhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736990&genericSearch=true&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/13/6a/6d/845386139.jpg",
+   "titolo": "Monolocale in Via Beata Elia di San Clemente, 210, Murat, Bari",
+   "id": "309171eeb2fc55db",
+   "zona": "Murat (centro)",
+   "gruppo": "Bari",
+   "scarta": "Murat (centro): interessa solo con box o posto auto",
+   "impronta": "decea0026d70",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "eee0e815b6921e1a": {
+   "prezzo": 145000.0,
+   "mq": 80,
+   "locali": 3,
+   "camere": null,
+   "bagni": null,
+   "piano": "piano rialzato",
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": false,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37539007/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/c6/17/ae/859832238.jpg",
+   "titolo": "Novità, Trilocale in Via Ugo Foscolo, Carbonara, Bari",
+   "id": "eee0e815b6921e1a",
+   "zona": "Carbonara",
+   "gruppo": "Bari",
+   "scarta": null,
+   "media_mq": 1700.0,
+   "eur_mq": 1812.0,
+   "rapporto": 1.066,
+   "livello": "media",
+   "note": [],
+   "impronta": "3706f6d3eae9",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "694cc533150f8ff6": {
+   "prezzo": 160000.0,
+   "mq": 90,
+   "locali": 3,
+   "camere": null,
+   "bagni": null,
+   "piano": "1°",
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": true,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37534767/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/b5/f7/13/859712659.jpg",
+   "titolo": "Novità",
+   "id": "694cc533150f8ff6",
+   "zona": "Libertà",
+   "gruppo": "Bari",
+   "scarta": null,
+   "media_mq": 2048.0,
+   "eur_mq": 1778.0,
+   "rapporto": 0.868,
+   "livello": "buono",
+   "note": [],
+   "impronta": "e421851aa369",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "msg_id": 127,
+   "primo_ts": 1795171967
+  },
+  "4d8ebc3af0c7f4dc": {
+   "prezzo": 32516.0,
+   "mq": 98,
+   "locali": 4,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533555/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/81/c2/8f/859679600.jpg",
+   "titolo": "Novità",
+   "id": "4d8ebc3af0c7f4dc",
+   "zona": "Valenzano",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "206cb8ff0f1f",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "32b5630230e833f3": {
+   "prezzo": 57750.0,
+   "mq": 51,
+   "locali": 4,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533554/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/4b/ce/d8/859679536.jpg",
+   "titolo": "Novità",
+   "id": "32b5630230e833f3",
+   "zona": "Valenzano",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "2740cf92f932",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "b7132e495d0877a5": {
+   "prezzo": 65438.0,
+   "mq": 90,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533542/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/8b/aa/31/859679250.jpg",
+   "titolo": "Novità",
+   "id": "b7132e495d0877a5",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "a32fe6d41a4b",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "f4bddd628c62d1d7": {
+   "prezzo": 103667.0,
+   "mq": 90,
+   "locali": 6,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533541/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/85/0a/49/859679116.jpg",
+   "titolo": "Novità",
+   "id": "f4bddd628c62d1d7",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "3b1c272c2aba",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "d1a2df388df6c0d0": {
+   "prezzo": 48754.0,
+   "mq": 98,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533534/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/fb/03/8b/859679260.jpg",
+   "titolo": "Novità",
+   "id": "d1a2df388df6c0d0",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "2faf3545ebf5",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "069efca2aec5d9b1": {
+   "prezzo": 119194.0,
+   "mq": 98,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37533528/?utm_medium=email&utm_campaign=daily_multiple_noSugg&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-20T105631&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyWithoutSuggestions&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d4894e04-0748-4531-990d-0ff79e913a26",
+   "img": "https://img4.idealista.it/blur/500_375_mq/0/id.pro.it.image.master/52/07/85/859679132.jpg",
+   "titolo": "Novità",
+   "id": "069efca2aec5d9b1",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "12f52eb7718a",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "primo_ts": 1795171967
+  },
+  "a1d3fc6277c1177e": {
+   "prezzo": 118000.0,
+   "mq": 220,
+   "locali": 5,
+   "camere": null,
+   "bagni": 2,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": true,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/53933866/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Casa indipendente in vendita, Capurso (BA)",
+   "id": "a1d3fc6277c1177e",
+   "zona": "Capurso",
+   "gruppo": "Comuni vicini",
+   "scarta": null,
+   "media_mq": 1430.0,
+   "eur_mq": 536.0,
+   "rapporto": 0.375,
+   "livello": "super",
+   "note": [
+    "🏡 Villa / casa indipendente"
+   ],
+   "impronta": "bfeaaa6bff9e",
+   "primo": "20/11 11:51",
+   "visto": "20/11 11:51",
+   "msg_id": 126,
+   "primo_ts": 1795171967
   }
  },
  "email_lette": [
@@ -17583,10 +17980,12 @@
   "<87.1D.44436.52A000B6@i-0920ce50770982a74.mta3vrest.sd.prd.sparkpost>",
   "<cf175a43-fe14-175c-2a5c-e82b5400a4b5@casa.it>",
   "<20261120090659.DA5E78014D0@mx2s.idealista.com>",
-  "<20261120093451.BA450801DCF@mx2s.idealista.com>"
+  "<20261120093451.BA450801DCF@mx2s.idealista.com>",
+  "<20261120095631.629671D809E1@mx3s.idealista.com>",
+  "<1a39a630-4393-fac9-cdbe-db30c4468ba7@casa.it>"
  ],
  "tg_offset": 928800433,
- "ultimo_giro": "20/11 10:50",
+ "ultimo_giro": "20/11 11:51",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -17666,7 +18065,7 @@
  },
  "ultimo_giro_siti_ts": 1795168758.6585443,
  "ultimo_giro_siti": "20/11 10:50",
- "ultimo_giro_ts": 1795168763,
+ "ultimo_giro_ts": 1795171967,
  "fonti": {
   "Email (portali)": {
    "ok": true,
