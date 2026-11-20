@@ -22,6 +22,10 @@ per zona, convenienza, sito e posto auto, più la tabella dei prezzi medi per zo
 Il repository è pubblico: nella memoria del radar e nella dashboard non ci sono nomi
 (dei bottoni ❤️ 📞 🗓 ❌ si salva solo l'azione), né email, né password.
 
+Da Telegram: messaggio fissato in alto nel gruppo con il bottone "📊 Apri la dashboard",
+comando /dashboard, e nella chat privata col bot il bottone "Dashboard" accanto al campo
+di scrittura (si apre dentro Telegram). Per rifare questa configurazione: `python -m radar.setup_bot`.
+
 ## Siti delle agenzie (lettura diretta)
 
 Ogni ora il radar legge anche i siti di: Tecnocasa, RE/MAX, Tempocasa, Toscano, Vistocasa,

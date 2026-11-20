@@ -124,9 +124,10 @@ def invia(a: dict) -> int | None:
     return r.json()["result"]["message_id"] if r.ok else None
 
 
-def testo(t: str, silent=True):
+def testo(t: str, silent=True, reply_markup=None):
+    extra = {"reply_markup": reply_markup} if reply_markup else {}
     return api("sendMessage", text=t, parse_mode="HTML", disable_web_page_preview="true",
-               disable_notification="true" if silent else "false")
+               disable_notification="true" if silent else "false", **extra)
 
 
 def gestisci_aggiornamenti(stato: dict):
@@ -191,9 +192,26 @@ def _comando(stato, m):
         sel = sorted((a for a in ann if a.get("rapporto") and "no" not in a.get("voti", {}).values()),
                      key=lambda a: a["rapporto"])[:15]
         testo("<b>🏆 I 15 annunci più convenienti in memoria</b>\n" + ("\n".join(_riga(a) for a in sel) or "Nessuno."))
+    elif t == "/dashboard":
+        testo(DASHBOARD_TESTO, silent=True, reply_markup=bottone_dashboard())
     elif t in ("/stato", "/start", "/aiuto"):
         testo(f"🏠 <b>Radar case Bari</b>\nUltimo giro: {e(stato.get('ultimo_giro', 'mai'))}\n"
               f"Annunci in memoria: {len(ann)}\n\n"
-              f'📊 <a href="{config.DASHBOARD}">Dashboard</a>\n\n'
+              "/dashboard: tutti gli annunci con filtri e zone\n"
               "/migliori: i più convenienti\n/preferiti: quelli con ❤️ 📞 🗓\n/stato: questo messaggio\n\n"
-              "Sotto ogni annuncio: ❤️ 📞 🗓 ❌. Un secondo tocco annulla.")
+              "Sotto ogni annuncio: ❤️ 📞 🗓 ❌. Un secondo tocco annulla.",
+              reply_markup=bottone_dashboard())
+
+
+DASHBOARD_TESTO = ("📊 <b>Dashboard del Radar Case Bari</b>\n"
+                   "Tutti gli annunci validi degli ultimi 30 giorni: vendita, affitto, aste e preferiti, "
+                   "con filtri per zona, prezzo e posto auto, e i prezzi medi di ogni quartiere.\n"
+                   "Si aggiorna da sola ogni 15 minuti.")
+COMANDI = [("dashboard", "Apri la dashboard con tutti gli annunci"),
+           ("migliori", "I 15 annunci più convenienti"),
+           ("preferiti", "Annunci con ❤️ 📞 🗓"),
+           ("stato", "Ultimo controllo e comandi")]
+
+
+def bottone_dashboard() -> str:
+    return json.dumps({"inline_keyboard": [[{"text": "📊 Apri la dashboard", "url": config.DASHBOARD}]]})
