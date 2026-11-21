@@ -20231,7 +20231,7 @@
   "<E4.9E.12060.A08210B6@i-0f5215fa5cc7454f6.mta3vrest.sd.prd.sparkpost>"
  ],
  "tg_offset": 928800435,
- "ultimo_giro": "21/11 06:23",
+ "ultimo_giro": "21/11 07:22",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -20311,11 +20311,11 @@
  },
  "ultimo_giro_siti_ts": 1795239053.9720762,
  "ultimo_giro_siti": "21/11 06:23",
- "ultimo_giro_ts": 1795239054,
+ "ultimo_giro_ts": 1795242214,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "2 email nuove in questo giro"
+   "nota": "0 email nuove in questo giro"
   }
  }
 }
