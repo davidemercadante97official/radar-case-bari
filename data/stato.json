@@ -10414,7 +10414,10 @@
    "impronta": "e569558e6a90",
    "primo": "18/11 12:36",
    "visto": "20/11 13:53",
-   "primo_ts": 1795002255
+   "primo_ts": 1795002255,
+   "altri_link": [
+    "https://www.casa.it/immobili/54864825/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+   ]
   },
   "279b079a8c053aec": {
    "prezzo": 145378.0,
@@ -18576,7 +18579,7 @@
    ],
    "impronta": "126f31bc811a",
    "primo": "20/11 15:09",
-   "visto": "20/11 15:09",
+   "visto": "21/11 12:57",
    "msg_id": 131,
    "primo_ts": 1795184291
   },
@@ -18836,7 +18839,8 @@
    "primo_ts": 1795191108,
    "altri_link": [
     "https://www.casa.it/immobili/55265895/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
-    "https://www.idealista.it/immobile/37547469/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-21T105047&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d2cd30e4-cd04-4a1e-9460-d69035217f89"
+    "https://www.idealista.it/immobile/37547469/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-21T105047&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d2cd30e4-cd04-4a1e-9460-d69035217f89",
+    "https://www.casa.it/immobili/55265895/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
    ]
   },
   "333c98ea9f33f281": {
@@ -19201,7 +19205,7 @@
    ],
    "impronta": "780bf59f6aa6",
    "primo": "20/11 18:06",
-   "visto": "20/11 18:06",
+   "visto": "21/11 12:57",
    "msg_id": 136,
    "primo_ts": 1795194842,
    "altri_link": [
@@ -19275,7 +19279,7 @@
    "scarta": "zona esclusa (San Paolo / CEP / San Pio)",
    "impronta": "1596579b796f",
    "primo": "20/11 18:06",
-   "visto": "20/11 18:06",
+   "visto": "21/11 12:57",
    "primo_ts": 1795194842,
    "altri_link": [
     "https://www.idealista.it/immobile/37547585/?utm_medium=email&utm_campaign=daily_multiple_full&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-21T105047&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&origin=alertMultipleDailyFull&savedSearchAlertId=68736686&genericSearch=false&utm_notification_id=d2cd30e4-cd04-4a1e-9460-d69035217f89"
@@ -20427,7 +20431,7 @@
    ],
    "impronta": "00e4ddd8fc87",
    "primo": "21/11 11:22",
-   "visto": "21/11 11:22",
+   "visto": "21/11 12:57",
    "msg_id": 145,
    "primo_ts": 1795256640,
    "altri_link": [
@@ -20617,6 +20621,154 @@
    "primo": "21/11 12:13",
    "visto": "21/11 12:13",
    "primo_ts": 1795260039
+  },
+  "2f4aec0694cc2680": {
+   "prezzo": 160000.0,
+   "mq": 110,
+   "locali": 3,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55268693/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://images-1.casa.it/360x280-fit/listing/0/ee/42/0e/860382513.jpg",
+   "titolo": "Appartamento in vendita in Via Porto Torres,, Modugno (BA)",
+   "id": "2f4aec0694cc2680",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "d904f099d390",
+   "primo": "21/11 12:57",
+   "visto": "21/11 12:57",
+   "primo_ts": 1795262287
+  },
+  "c62061bbbd81e2c6": {
+   "prezzo": 155000.0,
+   "mq": 130,
+   "locali": 3,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55268692/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://images-1.casa.it/360x280-fit/listing/0/89/04/d8/860382500.jpg",
+   "titolo": "Appartamento in vendita in Via Roma 40,, Modugno (BA)",
+   "id": "c62061bbbd81e2c6",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "7e7147c951c8",
+   "primo": "21/11 12:57",
+   "visto": "21/11 12:57",
+   "primo_ts": 1795262287
+  },
+  "7ae73404f7c3c7fc": {
+   "prezzo": 180000.0,
+   "mq": 105,
+   "locali": 3,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": true,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55268694/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "http://pubads.g.doubleclick.net/gampad/ad?iu=/72543886/csa.vendita&sz=500x280&tile=1&c=1795259947854&t=sect=emailalert%26type=residenziale%26regione=PUG%26provincia=BA%26comune=C_072006%26dcove=r%26pos=estrip1",
+   "titolo": "Casa indipendente in vendita in Piazza dei Caduti,, Modugno (BA)",
+   "id": "7ae73404f7c3c7fc",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": null,
+   "media_mq": 1783.0,
+   "eur_mq": 1714.0,
+   "rapporto": 0.961,
+   "livello": "media",
+   "note": [
+    "🏡 Villa / casa indipendente"
+   ],
+   "impronta": "9fdd2108bdd6",
+   "primo": "21/11 12:57",
+   "visto": "21/11 12:57",
+   "msg_id": 146,
+   "primo_ts": 1795262287
+  },
+  "101bc57d0b77dec1": {
+   "prezzo": 34875.0,
+   "mq": 90,
+   "locali": 4,
+   "camere": null,
+   "bagni": 2,
+   "piano": null,
+   "box": true,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": true,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55034491/?utm_source=alerts-casa&utm_medium=email&utm_campaign=daily_expressRecap_full_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "http://pubads.g.doubleclick.net/gampad/ad?iu=/72543886/csa.vendita&sz=500x280&tile=1&c=1795259947854&t=sect=emailalert%26type=residenziale%26regione=PUG%26provincia=BA%26comune=C_072006%26dcove=r%26pos=estrip3",
+   "titolo": "Appartamento in vendita in Via Eschilo,, Triggiano (BA)",
+   "id": "101bc57d0b77dec1",
+   "zona": "Triggiano",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "47bb75aec7b5",
+   "primo": "21/11 12:57",
+   "visto": "21/11 12:57",
+   "primo_ts": 1795262287
   }
  },
  "email_lette": [
@@ -20862,10 +21014,11 @@
   "<20261121105710.5BA727DD8D3@mx4s.idealista.com>",
   "<49d01a08-1dec-70e7-f436-c0e9b228e60a@casa.it>",
   "<C9.5F.24849.0AB710B6@i-0d82ed9f581f04d6e.mta3vrest.sd.prd.sparkpost>",
-  "<100096.9296852992.202611211111533395110.0008099801@mailing.idealista.it>"
+  "<100096.9296852992.202611211111533395110.0008099801@mailing.idealista.it>",
+  "<7082481b-38be-16aa-0cff-48859850ae1c@casa.it>"
  ],
  "tg_offset": 928800435,
- "ultimo_giro": "21/11 12:13",
+ "ultimo_giro": "21/11 12:57",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -20945,11 +21098,11 @@
  },
  "ultimo_giro_siti_ts": 1795260038.4732265,
  "ultimo_giro_siti": "21/11 12:13",
- "ultimo_giro_ts": 1795260039,
+ "ultimo_giro_ts": 1795262287,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "5 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  }
 }
