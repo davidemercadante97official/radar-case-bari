@@ -20157,7 +20157,7 @@
   "<20261121002310.230827DC17F@mx4s.idealista.com>"
  ],
  "tg_offset": 928800435,
- "ultimo_giro": "21/11 02:28",
+ "ultimo_giro": "21/11 03:28",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -20237,11 +20237,11 @@
  },
  "ultimo_giro_siti_ts": 1795224957.5007944,
  "ultimo_giro_siti": "21/11 02:28",
- "ultimo_giro_ts": 1795224958,
+ "ultimo_giro_ts": 1795228129,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "3 email nuove in questo giro"
+   "nota": "0 email nuove in questo giro"
   }
  }
 }
