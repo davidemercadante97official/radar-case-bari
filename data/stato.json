@@ -21784,6 +21784,76 @@
    "primo": "22/11 12:16",
    "visto": "22/11 12:16",
    "primo_ts": 1795346690
+  },
+  "ffa2893551101ece": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37561982/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-22T123127&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=84fe756a-4c8a-4d40-a9cd-a2173f69a30e",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "ffa2893551101ece",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "22/11 13:08",
+   "visto": "22/11 13:08",
+   "primo_ts": 1795349338
+  },
+  "ecb3ffa26e572b6e": {
+   "prezzo": 76500.0,
+   "mq": 137,
+   "locali": 4,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": true,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55272373/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita in Via Porto Torres 5,, Modugno (BA)",
+   "id": "ecb3ffa26e572b6e",
+   "zona": "Modugno",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "a1ac4df37e81",
+   "primo": "22/11 13:08",
+   "visto": "22/11 13:08",
+   "primo_ts": 1795349338
   }
  },
  "email_lette": [
@@ -22049,10 +22119,13 @@
   "<97.C0.33573.577720B6@i-0a88d5ab26e1c0cbd.mta3vrest.sd.prd.sparkpost>",
   "<20261122065011.1E187451B68@mx1s.idealista.com>",
   "<20261122093746.94F7E815F16@mx2s.idealista.com>",
-  "<c2aa4ff0-f5af-e5e6-4b99-5e2a7040f32c@casa.it>"
+  "<c2aa4ff0-f5af-e5e6-4b99-5e2a7040f32c@casa.it>",
+  "<20261122113127.60A63FC3452@mxs1.idealista.com>",
+  "<DE.0C.51936.9B2D20B6@i-0516f2e061652c983.mta3vrest.sd.prd.sparkpost>",
+  "<ff90c303-9db0-21ca-c210-dd8672eca560@casa.it>"
  ],
- "tg_offset": 928800436,
- "ultimo_giro": "22/11 12:16",
+ "tg_offset": 928800441,
+ "ultimo_giro": "22/11 13:08",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -22134,11 +22207,11 @@
  },
  "ultimo_giro_siti_ts": 1795346677.1862974,
  "ultimo_giro_siti": "22/11 12:16",
- "ultimo_giro_ts": 1795346690,
+ "ultimo_giro_ts": 1795349338,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "2 email nuove in questo giro"
+   "nota": "3 email nuove in questo giro"
   }
  }
 }
