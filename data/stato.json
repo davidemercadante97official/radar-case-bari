@@ -24701,6 +24701,76 @@
    "primo": "23/11 15:53",
    "visto": "23/11 15:53",
    "primo_ts": 1795446173
+  },
+  "0a6983d4687dbb34": {
+   "prezzo": 198000.0,
+   "mq": 169,
+   "locali": 5,
+   "camere": null,
+   "bagni": 3,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55281981/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita in Via Capurso,, Triggiano (BA)",
+   "id": "0a6983d4687dbb34",
+   "zona": "Triggiano",
+   "gruppo": "Comuni vicini",
+   "scarta": "comune vicino: solo ville/villette o nuova costruzione",
+   "impronta": "3c6ee0756ead",
+   "primo": "23/11 16:55",
+   "visto": "23/11 16:55",
+   "primo_ts": 1795449399
+  },
+  "b5a1ed33b648c861": {
+   "prezzo": 145350.0,
+   "mq": 83,
+   "locali": 3,
+   "camere": null,
+   "bagni": 1,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": true,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": "vendita",
+   "affitto": false,
+   "fonte": "Casa.it",
+   "url": "https://www.casa.it/immobili/55282058/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds",
+   "img": "https://www.casa.it/external-resources/mailer/logo_black2024_darkmode.png",
+   "titolo": "Appartamento in vendita in Via de Rossi 57,, Murat, Bari (BA)",
+   "id": "b5a1ed33b648c861",
+   "zona": "Murat (centro)",
+   "gruppo": "Bari",
+   "scarta": "Murat (centro): interessa solo con box o posto auto",
+   "impronta": "5fe1efc64daf",
+   "primo": "23/11 16:55",
+   "visto": "23/11 16:55",
+   "primo_ts": 1795449399
   }
  },
  "email_lette": [
@@ -25044,10 +25114,12 @@
   "<CF.04.51936.95A340B6@i-0516f2e061652c983.mta3vrest.sd.prd.sparkpost>",
   "<E7.32.19727.4B3440B6@i-0709db929489c81ba.mta3vrest.sd.prd.sparkpost>",
   "<20261123134817.B1F797DDB60@mx4s.idealista.com>",
-  "<C7.0E.60468.6EC440B6@i-0f5d359962ec32d6b.mta3vrest.sd.prd.sparkpost>"
+  "<C7.0E.60468.6EC440B6@i-0f5d359962ec32d6b.mta3vrest.sd.prd.sparkpost>",
+  "<fe1f4649-65de-be1b-2d5b-c3c233d0d6f0@casa.it>",
+  "<5dff544e-07d9-9767-6c23-42b6ca3d9151@casa.it>"
  ],
  "tg_offset": 928800441,
- "ultimo_giro": "23/11 15:53",
+ "ultimo_giro": "23/11 16:55",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -25127,11 +25199,11 @@
  },
  "ultimo_giro_siti_ts": 1795446168.3983517,
  "ultimo_giro_siti": "23/11 15:53",
- "ultimo_giro_ts": 1795446173,
+ "ultimo_giro_ts": 1795449399,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "1 email nuove in questo giro"
+   "nota": "2 email nuove in questo giro"
   }
  }
 }
