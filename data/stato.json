@@ -25444,6 +25444,41 @@
    "primo": "23/11 19:50",
    "visto": "23/11 20:56",
    "primo_ts": 1795460464
+  },
+  "78aed71832a2dcf3": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37578129/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-23T210729&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=4e61d425-7ce8-4299-8e2d-6b8b51be9ce9",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "78aed71832a2dcf3",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "23/11 21:45",
+   "visto": "23/11 21:45",
+   "primo_ts": 1795466760
   }
  },
  "email_lette": [
@@ -25801,10 +25836,12 @@
   "<20261123180322.6C6561DE2665@mx3s.idealista.com>",
   "<3F.BE.40348.164840B6@i-01a94a91d7039bc96.mta3vrest.sd.prd.sparkpost>",
   "<415a721b-4db6-653c-d7d2-7853173ce615@casa.it>",
-  "<20.26.53445.BD6840B6@i-0146e86e531db63fc.mta3vrest.sd.prd.sparkpost>"
+  "<20.26.53445.BD6840B6@i-0146e86e531db63fc.mta3vrest.sd.prd.sparkpost>",
+  "<20261123200729.1A72F172A40A@mxs6.idealista.com>",
+  "<DA.53.58044.F6F940B6@i-0c90e73aedd9f5043.mta3vrest.sd.prd.sparkpost>"
  ],
  "tg_offset": 928800441,
- "ultimo_giro": "23/11 20:56",
+ "ultimo_giro": "23/11 21:45",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -25887,11 +25924,11 @@
  },
  "ultimo_giro_siti_ts": 1795464264.9226468,
  "ultimo_giro_siti": "23/11 20:56",
- "ultimo_giro_ts": 1795464265,
+ "ultimo_giro_ts": 1795466760,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "0 email nuove in questo giro"
+   "nota": "2 email nuove in questo giro"
   }
  }
 }
