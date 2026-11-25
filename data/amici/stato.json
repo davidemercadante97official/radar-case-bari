@@ -1,0 +1,91 @@
+{
+ "annunci": {},
+ "email_lette": [],
+ "fonti": {
+  "Email (portali)": {
+   "ok": true,
+   "nota": "0 email nuove in questo giro"
+  }
+ },
+ "siti": {
+  "Tecnocasa": {
+   "annunci": 45,
+   "errori": [],
+   "ok": true
+  },
+  "RE/MAX": {
+   "annunci": 24,
+   "errori": [],
+   "ok": true
+  },
+  "Tempocasa": {
+   "annunci": 20,
+   "errori": [],
+   "ok": true
+  },
+  "Toscano": {
+   "annunci": 24,
+   "errori": [],
+   "ok": true
+  },
+  "Vistocasa": {
+   "annunci": 12,
+   "errori": [],
+   "ok": true
+  },
+  "Professionecasa": {
+   "annunci": 24,
+   "errori": [],
+   "ok": true
+  },
+  "Studio Vitulli": {
+   "annunci": 10,
+   "errori": [],
+   "ok": true
+  },
+  "Gabetti": {
+   "annunci": 18,
+   "errori": [],
+   "ok": true
+  },
+  "Rafaschieri": {
+   "annunci": 9,
+   "errori": [],
+   "ok": true
+  },
+  "Altomare": {
+   "annunci": 9,
+   "errori": [],
+   "ok": true
+  },
+  "Executive": {
+   "annunci": 3,
+   "errori": [],
+   "ok": true
+  },
+  "Castelletti": {
+   "annunci": 8,
+   "errori": [],
+   "ok": true
+  },
+  "Homedreams": {
+   "annunci": 3,
+   "errori": [],
+   "ok": true
+  },
+  "Paccione": {
+   "annunci": 1,
+   "errori": [],
+   "ok": true
+  },
+  "Zarra": {
+   "annunci": 24,
+   "errori": [],
+   "ok": true
+  }
+ },
+ "ultimo_giro_siti": "25/11 18:52",
+ "tg_offset": 201255721,
+ "ultimo_giro": "25/11 19:30",
+ "ultimo_giro_ts": 1795631578
+}
