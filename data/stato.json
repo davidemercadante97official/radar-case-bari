@@ -32130,10 +32130,11 @@
   "<96.D5.01465.1A6370B6@i-0146e86e531db63fc.mta3vrest.sd.prd.sparkpost>",
   "<dcc19f49-2fd4-bfb5-4b8b-0e71efe2afa4@casa.it>",
   "<92de4de8-fff9-85f4-4e94-991c8905030a@casa.it>",
-  "<20261125220917.87FC1180096@mxs8.idealista.com>"
+  "<20261125220917.87FC1180096@mxs8.idealista.com>",
+  "<0C.54.26613.3B2670B6@i-0c52486b7a6ed9f36.mta3vrest.sd.prd.sparkpost>"
  ],
  "tg_offset": 928800442,
- "ultimo_giro": "25/11 23:24",
+ "ultimo_giro": "26/11 00:19",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -32213,7 +32214,7 @@
  },
  "ultimo_giro_siti_ts": 1795645627.163525,
  "ultimo_giro_siti": "25/11 23:24",
- "ultimo_giro_ts": 1795645627,
+ "ultimo_giro_ts": 1795648830,
  "fonti": {
   "Email (portali)": {
    "ok": true,
