@@ -51,6 +51,10 @@ def valuta(a: dict) -> dict:
         if not lim[0] <= emq <= lim[1]:
             return {**a, "scarta": f"prezzo al m² impossibile ({emq:,.2f} €/m²): letto male".replace(",", "X")
                     .replace(".", ",").replace("X", ".")}
+    if aff and not config.AFFITTI_OK:
+        return {**a, "scarta": "affitti esclusi per questo gruppo"}
+    if a.get("asta") and not config.ASTE_OK:
+        return {**a, "scarta": "aste escluse per questo gruppo"}
     if aff and p > config.MAX_AFFITTO:
         return {**a, "scarta": "affitto sopra il budget"}
     if not aff and p > config.MAX_VENDITA:

@@ -44,9 +44,9 @@ def carica_env():
                 os.environ[k.strip()] = v.strip().strip('"').strip("'")
 
 
-def carica():
+def carica(path=STATO):
     try:
-        s = json.loads(STATO.read_text(encoding="utf8"))
+        s = json.loads(path.read_text(encoding="utf8"))
     except (FileNotFoundError, json.JSONDecodeError):
         s = {}
     s.setdefault("annunci", {})
@@ -54,15 +54,15 @@ def carica():
     return s
 
 
-def salva(s):
-    STATO.parent.mkdir(parents=True, exist_ok=True)
+def salva(s, path=STATO):
+    path.parent.mkdir(parents=True, exist_ok=True)
     if len(s["annunci"]) > config.MAX_SALVATI:
         tieni = sorted(s["annunci"].items(), key=lambda kv: kv[1].get("visto", ""))[-config.MAX_SALVATI:]
         s["annunci"] = dict(tieni)
     s["email_lette"] = s["email_lette"][-3000:]
-    tmp = STATO.with_suffix(".tmp")
+    tmp = path.with_suffix(".tmp")
     tmp.write_text(json.dumps(s, ensure_ascii=False, indent=1), encoding="utf8")
-    tmp.replace(STATO)
+    tmp.replace(path)
 
 
 def impronta(a) -> str:
@@ -91,14 +91,33 @@ def tocca_ai_siti(s, forza=False) -> bool:
 
 
 def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
-    s = carica()
+    """Raccoglie gli annunci una volta sola, poi li valuta e li invia per ogni profilo."""
+    from . import profili
+    attivi = [p for p in profili.PROFILI if p.attivo()]
+    s = carica()                                  # memoria principale: email lette, stato dei siti
+    stati = {p.nome: (s if p.cartella == "" else carica(p.stato)) for p in attivi}
     ora = adesso().strftime("%d/%m %H:%M")
-    if telegram.attivo() and not dry:
-        try:
-            telegram.gestisci_aggiornamenti(s)
-        except Exception:
-            traceback.print_exc()
+    cards, letti = raccogli(s, stati, ora, file, siti_forza, niente_siti)
+    s["email_lette"].extend(letti)
+    s["fonti"] = {"Email (portali)": {"ok": email_avvisi.configurato() or bool(file),
+                                      "nota": f"{len(letti)} email nuove in questo giro"}}
+    risultati = {}
+    for p in attivi:
+        sp = stati[p.nome]
+        if sp is not s:                           # i profili secondari vedono lo stato delle fonti principale
+            sp["fonti"], sp["siti"] = s.get("fonti", {}), s.get("siti", {})
+            sp["ultimo_giro_siti"] = s.get("ultimo_giro_siti")
+        with profili.usa(p):
+            print(f"\n=== {p.titolo} ===")
+            risultati[p.nome] = elabora(sp, cards, ora, dry, file, len(letti))
+            if not dry and not file:
+                salva(sp, p.stato)
+                dashboard(sp, p)
+    return risultati.get("noi", [])
 
+
+def raccogli(s, stati, ora, file, siti_forza, niente_siti):
+    """Annunci grezzi (schede) da email e siti, letti una volta per tutti i profili."""
     if file:
         with open(file, "rb") as f:
             cards = email_avvisi.annunci_da_email(email.message_from_bytes(f.read()))
@@ -114,13 +133,26 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
         from . import siti
         print("Siti delle agenzie:")
         try:
-            cards += siti.leggi_siti(set(s["annunci"].keys()) | {v.get("key") for v in s["annunci"].values()},
-                                     s.setdefault("siti", {}))
+            # la scheda di un annuncio si apre se almeno un profilo non lo conosce ancora
+            conosciuti = None
+            for sp in stati.values():
+                ids = set(sp["annunci"].keys())
+                conosciuti = ids if conosciuti is None else conosciuti & ids
+            cards += siti.leggi_siti(conosciuti or set(), s.setdefault("siti", {}))
             s["ultimo_giro_siti_ts"] = time.time()
             s["ultimo_giro_siti"] = ora
         except Exception:
             traceback.print_exc()
+    return cards, letti
 
+
+def elabora(s, cards, ora, dry, file, n_email):
+    """Valuta le schede con le regole del profilo attivo, avvisa il suo gruppo, aggiorna la sua memoria."""
+    if telegram.attivo() and not dry:
+        try:
+            telegram.gestisci_aggiornamenti(s)
+        except Exception:
+            traceback.print_exc()
     nuovi, impronte = [], {v.get("impronta"): k for k, v in s["annunci"].items()}
     nuovi_per_id: dict[str, dict] = {}
     for c in cards:
@@ -130,8 +162,10 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
         dup = impronte.get(a["impronta"])
         if old:
             old["visto"] = ora
-            # riavvisa solo se il prezzo è sceso
-            if a.get("prezzo") and old.get("prezzo") and a["prezzo"] < old["prezzo"] and da_notificare(a):
+            # riavvisa solo se il prezzo è sceso (e mai se la prima volta era stato scartato:
+            # stanze, zone escluse... la seconda volta la scheda non viene riaperta)
+            if (a.get("prezzo") and old.get("prezzo") and a["prezzo"] < old["prezzo"]
+                    and not old.get("scarta") and da_notificare(a)):
                 a["calo_da"] = old["prezzo"]
                 a["note"] = [f"📉 Prezzo sceso da {telegram.eur(old['prezzo'])}"] + a.get("note", [])
                 a["voti"] = old.get("voti", {})
@@ -171,19 +205,13 @@ def giro(dry=False, file=None, siti_forza=False, niente_siti=False):
             a.pop(k, None)
         a.setdefault("primo_ts", int(time.time()))
         s["annunci"][a["id"]] = {**s["annunci"].get(a["id"], {}), **a}
-    s["email_lette"].extend(letti)
     s["ultimo_giro"] = ora
     s["ultimo_giro_ts"] = int(time.time())
-    s["fonti"] = {"Email (portali)": {"ok": email_avvisi.configurato() or bool(file),
-                                      "nota": f"{len(letti)} email nuove in questo giro"}}
     scartati = {}
     for a in nuovi:
         if a.get("scarta"):
             scartati[a["scarta"]] = scartati.get(a["scarta"], 0) + 1
-    if not dry and not file:
-        salva(s)
-        dashboard(s)
-    print(f"Giro {ora}: {len(letti)} email nuove, {len(cards)} annunci, {len(nuovi)} nuovi, "
+    print(f"Giro {ora}: {n_email} email nuove, {len(cards)} annunci, {len(nuovi)} nuovi, "
           f"{len(da_mandare)} da segnalare, {inviati} inviati.")
     for k, v in sorted(scartati.items(), key=lambda kv: -kv[1]):
         print(f"   scartati: {v} × {k}")
@@ -197,13 +225,20 @@ CAMPI_DASH = ["id", "titolo", "url", "img", "fonte", "zona", "gruppo", "prezzo",
               "note", "primo", "primo_ts", "visto", "altri_link", "calo_da"]
 
 
-def dashboard(s):
+def dashboard(s, p=None):
     """File letti dalla dashboard (docs/ = GitHub Pages): annunci validi degli ultimi 30 giorni.
-    Niente nomi: dei bottoni si salvano solo le azioni."""
+    Niente nomi: dei bottoni si salvano solo le azioni. p = profilo (None = principale)."""
+    dash = p.dash if p else DASH
     limite = time.time() - 30 * 86400
     out = []
     for a in s["annunci"].values():
         if a.get("scarta") or not a.get("livello") or a.get("primo_ts", time.time()) < limite:
+            continue
+        # regole del profilo anche sugli annunci salvati prima che cambiassero
+        if (not config.AFFITTI_OK and a.get("affitto")) or (not config.ASTE_OK and a.get("asta")):
+            continue
+        if a.get("affitto") and (a.get("prezzo") or 0) > config.MAX_AFFITTO or \
+                not a.get("affitto") and (a.get("prezzo") or 0) > config.MAX_VENDITA:
             continue
         # annunci salvati prima della regola dei comuni (17/11/2026): stessa regola anche qui
         if (config.COMUNI_SOLO_VILLE_E_NUOVE and a.get("gruppo") != "Bari"
@@ -222,12 +257,19 @@ def dashboard(s):
                        **{k: {"ok": v.get("ok"), "nota": f"{v.get('annunci', 0)} annunci"
                               + (f" · errore: {v['errori'][0][:90]}" if v.get("errori") else "")}
                           for k, v in s.get("siti", {}).items()}},
-             "budget": {"vendita": config.MAX_VENDITA, "affitto": config.MAX_AFFITTO}}
-    DASH.mkdir(parents=True, exist_ok=True)
+             "budget": {"vendita": config.MAX_VENDITA, "affitto": config.MAX_AFFITTO},
+             "titolo": p.titolo if p else "Radar Case Bari",
+             "affitti": config.AFFITTI_OK, "aste": config.ASTE_OK}
+    dash.mkdir(parents=True, exist_ok=True)
     for nome, dati in (("annunci.json", out), ("stato.json", stato)):
-        tmp = DASH / (nome + ".tmp")
+        tmp = dash / (nome + ".tmp")
         tmp.write_text(json.dumps(dati, ensure_ascii=False, separators=(",", ":")), encoding="utf8")
-        tmp.replace(DASH / nome)
+        tmp.replace(dash / nome)
+    # la pagina è la stessa per tutti i profili: i profili secondari ne hanno una copia aggiornata
+    if p is not None and p.cartella:
+        src, dst = config.ROOT / "docs" / "index.html", dash.parent / "index.html"
+        if src.exists() and (not dst.exists() or dst.read_bytes() != src.read_bytes()):
+            dst.write_bytes(src.read_bytes())
 
 
 def cli():

@@ -212,7 +212,9 @@ def leggi_siti(conosciuti: set[str], stato_siti: dict) -> list[dict]:
             apri = (sito.get("dettaglio") or not p or p < SOGLIA_AFFITTO
                     or z is None or z.regola == "generica")
             scheda = ""
-            if apri and key not in conosciuti:
+            # "conosciuti" contiene gli id salvati in memoria (sha1 della chiave, 16 caratteri)
+            gia_visto = key in conosciuti or hashlib.sha1(key.encode()).hexdigest()[:16] in conosciuti
+            if apri and not gia_visto:
                 if dettagli >= MAX_DETTAGLI:
                     continue                      # lo leggo al prossimo giro
                 try:

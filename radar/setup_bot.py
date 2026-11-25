@@ -13,11 +13,24 @@ from .main import carica_env
 
 
 def main():
+    """python -m radar.setup_bot [amici]"""
+    from . import profili
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     carica_env()
-    if not telegram.attivo():
-        print("Manca TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID nel file .env")
+    nome = sys.argv[1] if len(sys.argv) > 1 else "noi"
+    p = next((x for x in profili.PROFILI if x.nome == nome), None)
+    if p is None:
+        print(f"Profilo sconosciuto: {nome}")
         return
+    with profili.usa(p):
+        if not telegram.attivo():
+            print(f"Manca {p.token_env} o {p.chat_env} nel file .env")
+            return
+        print(f"Configuro: {p.titolo} · dashboard {config.DASHBOARD}")
+        _configura()
+
+
+def _configura():
     comandi = json.dumps([{"command": c, "description": d} for c, d in telegram.COMANDI])
     for scope in ({"type": "default"}, {"type": "all_group_chats"}):
         r = telegram.api("setMyCommands", commands=comandi, scope=json.dumps(scope), chat_id=None)

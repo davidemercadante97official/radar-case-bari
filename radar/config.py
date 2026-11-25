@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parent.parent
 # --- Budget ------------------------------------------------------------------
 MAX_VENDITA = 200_000          # € prezzo massimo in vendita (le aste: prezzo base)
 MAX_AFFITTO = 1_000            # € al mese
+AFFITTI_OK = True              # i profili possono escludere affitti e aste (radar/profili.py)
+ASTE_OK = True
 SOGLIA_AFFITTO = 5_000         # sotto questa cifra un prezzo è un affitto mensile
 
 # --- Quando è un affare (prezzo al m² diviso media della zona) -----------------

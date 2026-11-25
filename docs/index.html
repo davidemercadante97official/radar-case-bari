@@ -169,6 +169,7 @@ details.box summary{cursor:pointer;font-weight:600}
     <div class="legend">
       <p><b>Convenienza</b>: prezzo al m² rispetto alla media del quartiere. 🚨 super affare = almeno 25% sotto, 💡 buon affare = almeno 12% sotto, 🏠 nella media, 🔺 caro = oltre 10% sopra.</p>
       <p>Case da ristrutturare: al prezzo si aggiungono 500 €/m² di lavori. Nuove costruzioni: la media della zona sale del 25%.</p>
+      <p id="budget"></p>
       <p>Esclusi sempre: San Paolo, CEP, San Pio/Enziteto, stanze e case per studenti. Murat e Umbertino solo con box. Fuori Bari solo ville, case indipendenti e nuove costruzioni.</p>
       <p>I bottoni ❤️ 📞 🗓 ❌ sono quelli premuti nel gruppo Telegram (senza nomi).</p>
     </div>
@@ -279,6 +280,12 @@ function render(){
 }
 
 function renderStatus(){
+  // la stessa pagina serve più gruppi: titolo e schede vengono dal profilo (data/stato.json)
+  if(STATUS.titolo){document.title=STATUS.titolo;$(".brand h1").textContent=STATUS.titolo}
+  $('.tab[data-tab="affitto"]').hidden=STATUS.affitti===false;
+  $('.tab[data-tab="asta"]').hidden=STATUS.aste===false;
+  const B=STATUS.budget||{};
+  $("#budget").textContent="Budget: vendita fino a "+eur(B.vendita)+(STATUS.affitti===false?" · niente affitti":" · affitto fino a "+eur(B.affitto)+" al mese")+(STATUS.aste===false?" · niente aste.":".");
   $("#updated").textContent=STATUS.ultimo_giro_ts?"Ultimo controllo "+ago(STATUS.ultimo_giro_ts)+(STATUS.ultimo_giro_siti?` · siti agenzie: ${STATUS.ultimo_giro_siti}`:""):"in attesa del primo controllo";
   $("#s-tot").textContent=ALL.length;
   $("#s-super").textContent=ALL.filter(x=>x.livello==="super").length;

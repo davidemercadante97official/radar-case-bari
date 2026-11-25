@@ -149,6 +149,28 @@ class TestRadar(unittest.TestCase):
                      "testo": "Trilocale in vendita, Japigia, Bari | € 15.000 | 90 m²"})
         self.assertIn("impossibile", x["scarta"])
 
+    def test_profili(self):
+        from radar import config, profili
+        noi, amici = profili.PROFILI[0], profili.PROFILI[1]
+        base = {"fonte": "T", "img": None, "scheda_letta": True}
+        casa = {**base, "key": "p:1", "url": "https://agenzia.it/vendita/1",
+                "testo": "Quadrilocale in vendita, Japigia, Bari | € 280.000 | 140 m²"}
+        affitto = {**base, "key": "p:2", "url": "https://agenzia.it/affitto/2",
+                   "testo": "Trilocale in affitto, Japigia, Bari | € 800 | 90 m²"}
+        asta = {**base, "key": "p:3", "url": "https://agenzia.it/x/3",
+                "testo": "Appartamento in vendita all'asta giudiziaria, Japigia, Bari | € 90.000 | 90 m²"}
+        with profili.usa(noi):
+            self.assertIn("budget", prepara(casa)["scarta"])
+            self.assertIsNone(prepara(affitto)["scarta"])
+            self.assertIsNone(prepara(asta)["scarta"])
+        with profili.usa(amici):
+            self.assertIsNone(prepara(casa)["scarta"])
+            self.assertIn("affitti esclusi", prepara(affitto)["scarta"])
+            self.assertIn("aste escluse", prepara(asta)["scarta"])
+            self.assertTrue(config.DASHBOARD.endswith("/amici/"))
+        self.assertEqual(config.MAX_VENDITA, 200_000)        # dopo il blocco tornano le regole principali
+        self.assertTrue(config.AFFITTI_OK and config.ASTE_OK)
+
     def test_siti_schede(self):
         import re
         from bs4 import BeautifulSoup
