@@ -14256,7 +14256,10 @@
    "impronta": "c73a539aa0e8",
    "primo": "19/11 11:36",
    "visto": "20/11 13:53",
-   "primo_ts": 1795085094
+   "primo_ts": 1795085094,
+   "altri_link": [
+    "https://www.casa.it/immobili/55304497/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+   ]
   },
   "c65a4c6f97a73a5a": {
    "prezzo": 175000.0,
@@ -17645,7 +17648,10 @@
    "impronta": "2740cf92f932",
    "primo": "20/11 11:51",
    "visto": "20/11 11:51",
-   "primo_ts": 1795171967
+   "primo_ts": 1795171967,
+   "altri_link": [
+    "https://www.casa.it/immobili/55304575/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
+   ]
   },
   "b7132e495d0877a5": {
    "prezzo": 65438.0,
@@ -30330,7 +30336,8 @@
    "primo": "25/11 12:38",
    "visto": "25/11 12:38",
    "altri_link": [
-    "https://www.vistocasa.com/it/immobile.aspx?ArticoliId=9534"
+    "https://www.vistocasa.com/it/immobile.aspx?ArticoliId=9534",
+    "https://www.casa.it/immobili/55304754/?utm_source=alerts-casa&utm_medium=email&utm_campaign=express_newAd_noSugg_sale_saveSearch&aid=MTgyNjAzMTE%3D&utm_content=emailAlertAds"
    ],
    "msg_id": 198,
    "primo_ts": 1795607264
@@ -31252,6 +31259,76 @@
    "primo": "25/11 17:34",
    "visto": "25/11 17:34",
    "primo_ts": 1795625125
+  },
+  "51d6a97614a5ab6e": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37586499/?utm_medium=email&utm_campaign=express_newAd_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-25T173846&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=968d2f11-d927-40cf-a8e7-9bb6280c9f6e",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "51d6a97614a5ab6e",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "25/11 18:29",
+   "visto": "25/11 18:29",
+   "primo_ts": 1795627894
+  },
+  "52491c2cee48343a": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/36630701/?utm_medium=email&utm_campaign=express_priceDrop_sale_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-25T174613&utm_link=propertyLowPricePhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=11baa800-b959-45ed-9cdd-ebc9e46b8010",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "52491c2cee48343a",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "25/11 18:29",
+   "visto": "25/11 18:29",
+   "primo_ts": 1795627894
   }
  },
  "email_lette": [
@@ -31751,10 +31828,16 @@
   "<20261125162712.93E457C1437@mx4s.idealista.com>",
   "<344f488a-ad58-5ed6-7c21-ba4efb415091@casa.it>",
   "<20261125163246.D4A9E4402C7@mx1s.idealista.com>",
-  "<7f74e711-14f8-8a76-2092-fe89734919dd@casa.it>"
+  "<7f74e711-14f8-8a76-2092-fe89734919dd@casa.it>",
+  "<03.B2.27647.7FE070B6@i-03863fe85411e7df7.mta3vrest.sd.prd.sparkpost>",
+  "<20261125163846.6E5A54406B3@mx1s.idealista.com>",
+  "<7ce65dfb-a503-617d-e0a2-0f2a6a76e75f@casa.it>",
+  "<20261125164613.DBBB67C263E@mx4s.idealista.com>",
+  "<7ee283ac-1b4a-15d0-8b1b-bebed5cf34bb@casa.it>",
+  "<6bb3b1d2-5d8e-22fe-35e5-94f18952f95f@casa.it>"
  ],
  "tg_offset": 928800441,
- "ultimo_giro": "25/11 17:34",
+ "ultimo_giro": "25/11 18:29",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -31836,11 +31919,11 @@
  },
  "ultimo_giro_siti_ts": 1795625123.5483916,
  "ultimo_giro_siti": "25/11 17:34",
- "ultimo_giro_ts": 1795625125,
+ "ultimo_giro_ts": 1795627894,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "7 email nuove in questo giro"
+   "nota": "6 email nuove in questo giro"
   }
  }
 }
