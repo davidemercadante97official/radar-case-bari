@@ -26,6 +26,21 @@ Da Telegram: messaggio fissato in alto nel gruppo con il bottone "📊 Apri la d
 comando /dashboard, e nella chat privata col bot il bottone "Dashboard" accanto al campo
 di scrittura (si apre dentro Telegram). Per rifare questa configurazione: `python -m radar.setup_bot`.
 
+## Due gruppi (profili)
+
+Le fonti si leggono una volta sola; ogni gruppo valuta gli annunci con le sue regole e ha
+bot, memoria, bottoni e dashboard propri (`radar/profili.py`).
+
+| Gruppo | Bot | Regole | Memoria | Dashboard |
+|---|---|---|---|---|
+| Voi | `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | vendita ≤ 200.000 €, affitto ≤ 1.000 €, aste sì | `data/stato.json` | `/` |
+| Amici | `TELEGRAM_BOT_TOKEN_2` / `TELEGRAM_CHAT_ID_2` | solo vendita ≤ 300.000 €, niente affitti né aste | `data/amici/stato.json` | `/amici/` |
+
+Zone, esclusioni e regola dei comuni sono le stesse. Collegare o riconfigurare il gruppo amici:
+`python -m radar.trova_chat_id amici` e `python -m radar.setup_bot amici`.
+Le ricerche salvate sui portali devono arrivare a 300.000 € perché gli amici ricevano anche
+le case tra 200.000 e 300.000 € dalle email (i siti delle agenzie si leggono senza limite).
+
 ## Siti delle agenzie (lettura diretta)
 
 Ogni ora il radar legge anche i siti di: Tecnocasa, RE/MAX, Tempocasa, Toscano, Vistocasa,
