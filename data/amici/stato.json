@@ -13223,7 +13223,7 @@
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "3 email nuove in questo giro"
+   "nota": "0 email nuove in questo giro"
   }
  },
  "siti": {
@@ -13305,6 +13305,6 @@
  },
  "ultimo_giro_siti": "26/11 21:45",
  "tg_offset": 201255722,
- "ultimo_giro": "26/11 21:45",
- "ultimo_giro_ts": 1795726089
+ "ultimo_giro": "26/11 22:37",
+ "ultimo_giro_ts": 1795729123
 }
