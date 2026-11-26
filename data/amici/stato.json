@@ -12777,13 +12777,48 @@
    "primo": "26/11 18:35",
    "visto": "26/11 18:35",
    "primo_ts": 1795714754
+  },
+  "0f63af4e53424424": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37615642/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-26T184814&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=e4d107b6-e6ce-4cb1-a9e7-1e6bb1f2ac7d",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "0f63af4e53424424",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "26/11 19:32",
+   "visto": "26/11 19:32",
+   "primo_ts": 1795718042
   }
  },
  "email_lette": [],
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "1 email nuove in questo giro"
+   "nota": "2 email nuove in questo giro"
   }
  },
  "siti": {
@@ -12868,6 +12903,6 @@
  },
  "ultimo_giro_siti": "26/11 18:35",
  "tg_offset": 201255722,
- "ultimo_giro": "26/11 18:35",
- "ultimo_giro_ts": 1795714754
+ "ultimo_giro": "26/11 19:32",
+ "ultimo_giro_ts": 1795718042
 }
