@@ -32527,10 +32527,18 @@
   "<20261126002556.35B7E1E80132@mxs2.idealista.com>",
   "<20261126010526.DFF727C01FB@mx4s.idealista.com>",
   "<20261126013418.D45001D81831@mx3s.idealista.com>",
-  "<20261126014430.BFA7F1D806AC@mx3s.idealista.com>"
+  "<20261126014430.BFA7F1D806AC@mx3s.idealista.com>",
+  "<20.76.04414.5CFB70B6@i-0a06df6a8c8da5ab7.mta3vrest.sd.prd.sparkpost>",
+  "<72.0A.05020.7F0C70B6@i-0b79ca83edd840b20.mta3vrest.sd.prd.sparkpost>",
+  "<0D.E1.21947.F11C70B6@i-0ad4ed01054b9efae.mta3vrest.sd.prd.sparkpost>",
+  "<26.BD.64415.721C70B6@i-0b6abf5df5aa78cbc.mta3vrest.sd.prd.sparkpost>",
+  "<FA.CB.43578.B21C70B6@i-07f3594aa66d93530.mta3vrest.sd.prd.sparkpost>",
+  "<5F.46.58615.561C70B6@i-0dcae1139d500ecaf.mta3vrest.sd.prd.sparkpost>",
+  "<DD.91.15429.071C70B6@i-0ac12410f251e75d8.mta3vrest.sd.prd.sparkpost>",
+  "<D8.AF.51427.C71C70B6@i-0d82ed9f581f04d6e.mta3vrest.sd.prd.sparkpost>"
  ],
  "tg_offset": 928800442,
- "ultimo_giro": "26/11 05:57",
+ "ultimo_giro": "26/11 06:56",
  "siti": {
   "Tecnocasa": {
    "annunci": 45,
@@ -32610,11 +32618,11 @@
  },
  "ultimo_giro_siti_ts": 1795669387.8860462,
  "ultimo_giro_siti": "26/11 05:57",
- "ultimo_giro_ts": 1795669388,
+ "ultimo_giro_ts": 1795672683,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "0 email nuove in questo giro"
+   "nota": "8 email nuove in questo giro"
   }
  }
 }
