@@ -36762,6 +36762,41 @@
    "primo": "27/11 21:46",
    "visto": "27/11 23:48",
    "primo_ts": 1795812509
+  },
+  "ebb224c57004c502": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37627798/?utm_medium=email&utm_campaign=express_newAd_rent_professional&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-27T235841&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=b87fb82d-7589-424a-a984-b164f37644b6",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "ebb224c57004c502",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "28/11 00:43",
+   "visto": "28/11 00:43",
+   "primo_ts": 1795823093
   }
  },
  "email_lette": [
@@ -37413,10 +37448,11 @@
   "<D5.D0.03931.79BB90B6@i-047fca55162be13b4.mta3vrest.sd.prd.sparkpost>",
   "<F3.1F.47239.C00C90B6@i-05129c6d1acd520d0.mta3vrest.sd.prd.sparkpost>",
   "<29.1F.43578.A10F90B6@i-07f3594aa66d93530.mta3vrest.sd.prd.sparkpost>",
-  "<228a2d28-c08e-de64-84be-d9b7a235dd85@casa.it>"
+  "<228a2d28-c08e-de64-84be-d9b7a235dd85@casa.it>",
+  "<20261127225841.A48884000B1@mxs5.idealista.com>"
  ],
  "tg_offset": 928800442,
- "ultimo_giro": "27/11 23:48",
+ "ultimo_giro": "28/11 00:43",
  "siti": {
   "Tecnocasa": {
    "annunci": 30,
@@ -37498,11 +37534,11 @@
  },
  "ultimo_giro_siti_ts": 1795819870.8528872,
  "ultimo_giro_siti": "27/11 23:48",
- "ultimo_giro_ts": 1795819871,
+ "ultimo_giro_ts": 1795823093,
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "0 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  }
 }
