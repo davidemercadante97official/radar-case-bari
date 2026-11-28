@@ -17446,13 +17446,48 @@
    "visto": "28/11 16:27",
    "msg_id": 67,
    "primo_ts": 1795873883
+  },
+  "45dda234a98e867b": {
+   "prezzo": null,
+   "mq": null,
+   "locali": null,
+   "camere": null,
+   "bagni": null,
+   "piano": null,
+   "box": null,
+   "balcone": null,
+   "terrazzo": null,
+   "ascensore": null,
+   "ristrutturare": false,
+   "asta": false,
+   "occupato": false,
+   "non_visitabile": false,
+   "non_casa": false,
+   "studenti": false,
+   "transitorio": false,
+   "indipendente": false,
+   "nuova": false,
+   "contratto": null,
+   "affitto": false,
+   "fonte": "Idealista",
+   "url": "https://www.idealista.it/immobile/37632632/?utm_medium=email&utm_campaign=express_newAd_sale_particular&utm_campaigntype=retention&utm_project=adNotification&utm_source=alerts-id&utm_date_send=2026-11-28T170209&utm_link=propertyNewPhoto&utm_recipient_id=fo8Ed44Jxb+fcXL7dfmfqUrJT2cEhOM3dZo+NYz0cuI=&utm_notification_id=e84ce33c-b1b6-4d28-a841-c0a5e3b5256b",
+   "img": "https://st3.idealista.it/static/common/release/home/resources/img/logo-small.png",
+   "titolo": "",
+   "id": "45dda234a98e867b",
+   "zona": null,
+   "gruppo": null,
+   "scarta": "zona non riconosciuta o non nella lista",
+   "impronta": "5ce4d2901896",
+   "primo": "28/11 17:20",
+   "visto": "28/11 17:20",
+   "primo_ts": 1795882860
   }
  },
  "email_lette": [],
  "fonti": {
   "Email (portali)": {
    "ok": true,
-   "nota": "0 email nuove in questo giro"
+   "nota": "1 email nuove in questo giro"
   }
  },
  "siti": {
@@ -17534,6 +17569,6 @@
  },
  "ultimo_giro_siti": "28/11 16:27",
  "tg_offset": 201255722,
- "ultimo_giro": "28/11 16:27",
- "ultimo_giro_ts": 1795879805
+ "ultimo_giro": "28/11 17:20",
+ "ultimo_giro_ts": 1795882860
 }
